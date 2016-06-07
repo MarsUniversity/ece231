@@ -1,28 +1,21 @@
 \documentclass{handout}
 
-\SetInstructor{ Lt Col James Phillips}
+% \SetInstructor{ Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 6: Node Voltage Analysis}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
-
+\usepackage{listings}
 \showsoln \setsolncolor{red}
 
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Quiz \#1 today
-\item HW \#3 due Lesson 10
-\item Problem set \#2 due Lesson 10
-\item Quiz \#2 during Lesson 10
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
-\item Demonstrate the ability to write node votage equations for a given circuit
+\item Demonstrate the ability to write node voltage equations for a given circuit
 \item Demonstrate the ability to solve for unknown circuit parameters using node voltage analysis
 \end{enumerate}
 
@@ -35,16 +28,9 @@
 \item [Optional]: None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 3.1, 3.8, 3.12 --- Due Lesson 8
-\item [Recommended textbook problems]: 3.2, 3.4
-\item[Other]: None
-\end{description}
-
 
 \section{What is Node Voltage Analysis?}
-Relying on element constraints and connection constraints to solve complex circuits can lead to unwieldy numbers of equations.  Instead we can write equations for {\em Node Voltages}.  This is refered to as node voltage analysis.  We start by learning the steps for writing node voltage equations and then looking at methods to solve those equations.
+Relying on element constraints (e.g., component i-v relationships) and connection constraints (e.g., KVL and KCL) to solve complex circuits can lead to unwieldy numbers of equations.  Instead we can write equations for {\em Node Voltages}.  This is referred to as node voltage analysis.  We start by learning the steps for writing node voltage equations and then looking at methods to solve those equations.
 
 \newpage
 \pagebreak
@@ -54,7 +40,7 @@ Relying on element constraints and connection constraints to solve complex circu
 Without justification I will offer that node voltage analysis is easier when no voltage sources are in the circuit.  These circuits contain only current sources and resistors.  We will start by looking at these types of circuits.
 
 \subsection{How do we write Node Voltage equations?}
-Below are the steps for writing node voltage eqautions:
+Below are the steps for writing node voltage equations:
 \soln{4in}{
 \begin{enumerate}
 \item Identify a \textbf{reference node}.  You will not write an equation for this node, but the voltages at the other nodes will use this as a reference.
@@ -91,6 +77,7 @@ Below are the steps for writing node voltage eqautions:
 \includegraphics[width=0.8\textwidth]{NodalAnalysisEx1solnC.jpg}
 \end{figure}
 }
+
 \newpage
 \pagebreak
 \clearpage
@@ -118,6 +105,7 @@ Below are the steps for writing node voltage eqautions:
 \includegraphics[width=0.7\textwidth]{NodalAnalysisEx2solnC.jpg}
 \end{figure}
 }
+
 \newpage
 \pagebreak
 \clearpage
@@ -136,12 +124,12 @@ If your voltage source is in series with a resistor, you should do a source tran
 \label{fig: SourceTransformation}
 \end{figure}
 
-where $i$ and $v$ are related by	
+where $i$ and $v$ are related by
 \begin{eqnarray}
 v_s &=& i_sR_2 \nonumber \\
 i_s &=& \frac{v_s}{R_1} \nonumber \\
-R_1 &=& R_2 \nonumber 
-\end{eqnarray} 
+R_1 &=& R_2 \nonumber
+\end{eqnarray}
 \newpage
 \pagebreak
 \clearpage
@@ -166,7 +154,7 @@ R_1 &=& R_2 \nonumber
 \clearpage
 
 \subsection{Method 2: Smart choice of reference node}
-You should always think about what node makes the most sense as a reference node.  When possible select one of the nodes that connects to your voltage souce.  By knowing that one side of the voltage source is grounded you will instantly know the voltage at the other source node.  
+You should always think about what node makes the most sense as a reference node.  When possible select one of the nodes that connects to your voltage souce.  By knowing that one side of the voltage source is grounded you will instantly know the voltage at the other source node.
 
 \textbf{Repeat Textbook Exercise 3-9 using Method 2}
 \soln{7in}{
@@ -178,7 +166,7 @@ You should always think about what node makes the most sense as a reference node
 \centering
 \includegraphics[width=0.5\textwidth]{TextbookExercise3-9solnM2-B.jpg}
 \end{figure}
-}	
+}
 
 \newpage
 \pagebreak
@@ -212,11 +200,34 @@ where $v_s$ is the source voltage and $v_A$ \& $v_B$ are the node voltages on ea
 \centering
 \includegraphics[width=0.6\textwidth]{NodalAnalysisEx3solnC.jpg}
 \end{figure}
-}	
+}
 
 \newpage
 \pagebreak
 \clearpage
+
+\section{Numerical Tools}
+
+You can quickly solve these by use Matlab. Going back to Exercise 3-4, we can do:
+
+% \soln{0.5in}{
+	\begin{lstlisting}[language=Matlab,frame=single]
+		A = [1.667, -0.667; -0.667 1.667]*1e-3
+		b = [20; 50]*1e-3
+		x = inv(A)*b
+	\end{lstlisting}
+% }
+
+You can also use the Python programming language:
+
+\begin{lstlisting}[language=Python,frame=single]
+	import numpy as np
+	A = np.array([[1.667, -0.667],[-0.667 1.667]]])*1e-3
+	b = np.array([20, 50])*1e-3
+	x = inv(A).dot(b)  # or x = np.linalg.solve(A,b)
+\end{lstlisting}
+
+Both are able to do numeric and symbolic manipulation.
 
 %\section{Review Questions}
 %\begin{questions}
@@ -240,10 +251,10 @@ where $v_s$ is the source voltage and $v_A$ \& $v_B$ are the node voltages on ea
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
-%\begin{figure} 
+%\begin{figure}
 %\centering
 %\includegraphics[width=0.5\textwidth]{OhmsLawExampleSolution.jpg}
 %\caption{Ohm's Law example circuit}

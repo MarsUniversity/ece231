@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 9: Thevenin and Norton Equivalent Circuits}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
@@ -12,13 +12,6 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#3 due next lesson
-\item Problem set \#2 due next lesson
-\item Quiz \#2 next lesson
-\item Block 2 Skills Review due Lesson 14
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -33,12 +26,6 @@
 \item  Textbook, sections 3.4, pages 109--119
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 3.47, 3.49, 3.51 --- Due Lesson 10
-\item [Recommended textbook problems]: 3.56, 3.57
 \end{description}
 
 \section{Statement of Thevenin's and Norton's Theorems}
@@ -74,7 +61,7 @@ Norton's theorem simply states that the entire source circuit can be replaced wi
 
 
 \subsection{Another important note}
-Since both the Thevenin Circuit and the Norton Circuit have identical $i$--$v$ (at the interface) to the original circuit, they have identical $i$--$v$ relationships to one another (also at the interface).
+Since both the Thevenin Circuit and the Norton Circuit have identical $i$--$v$ (at the interface) to the original circuit, they have identical $i$--$v$ relationships to one another (also at the interface). However, it does not calculate the power dissipated by the source circuit (see p. 109, Figure 3-40 (a) vs (e)).
 
 \section{Finding the Thevenin or Norton Equivalent Circuit}
 How do we go about finding the values of our sources and resistances for the our Thevenin or Norton circuits?
@@ -107,7 +94,7 @@ R_T=R_N=\frac{v_{oc}}{i_{sc}}=\frac{v_T}{i_N}
 \end{equation}
 }
 
-The other method is called {\em look-back}. To utilize the look-back method, we short the voltage sources and open the current sources in the \textbf{source circuit}.  With then calculate the resistance of this new circuit (with the load disconnected).  This will give us our $R_T$; thsi will be demonstrated in some of our examples below.
+The other method is called {\em look-back}. To utilize the look-back method, we short the voltage sources and open the current sources in the \textbf{source circuit}.  We then calculate the resistance of this new circuit (with the load disconnected).  This will give us our $R_T$; this will be demonstrated in some of our examples below.
 
 \newpage
 \clearpage
@@ -142,7 +129,7 @@ Find the Thevenin equivalent of the circuit shown in Figure \ref{fig: Example1}.
 
 
 \subsection{Example 2 - Textbook Exercise 3-30}
-Find the Thevenin and Norton equivalents of the circuit shown in Figure \ref{fig: Example2}.  Then find the voltage, current and power delivered to a $50 \Omega$ load. 
+Find the Thevenin and Norton equivalents of the circuit shown in Figure \ref{fig: Example2}.  Then find the voltage, current and power delivered to a $50 \Omega$ load.
 \begin{figure} [h t b]
 \centering
 \includegraphics[width=0.7\textwidth]{Example2.jpg}
@@ -167,7 +154,7 @@ Find the Thevenin and Norton equivalents of the circuit shown in Figure \ref{fig
 \pagebreak
 
 \subsection{Example 3 - Textbook Exercise 3-31}
-Find the current and power delivered to an unknown load in Figure \ref{fig: Example2} if $v=+6\ V$ . 
+Find the current and power delivered to an unknown load in Figure \ref{fig: Example2} if $v=+6\ V$ .
 
 \soln{6in}{
 \begin{figure} [h t b]
@@ -181,7 +168,7 @@ Find the current and power delivered to an unknown load in Figure \ref{fig: Exam
 \pagebreak
 
 \subsection{Example 4}
-Use Thevenin's theorem to find $v_o$ in Figure \ref{fig: Example4} 
+Use Thevenin's theorem to find $v_o$ in Figure \ref{fig: Example4}
 \begin{figure} [h t b]
 \centering
 \includegraphics[width=0.7\textwidth]{Example4.jpg}
@@ -206,7 +193,7 @@ Use Thevenin's theorem to find $v_o$ in Figure \ref{fig: Example4}
 \pagebreak
 
 \subsection{Example 5}
-Use Norton's theorem to find $v_o$ in Figure \ref{fig: Example5} 
+Use Norton's theorem to find $v_o$ in Figure \ref{fig: Example5}
 \begin{figure} [h t b]
 \centering
 \includegraphics[width=0.7\textwidth]{Example5.jpg}
@@ -241,7 +228,7 @@ Use Norton's theorem to find $v_o$ in Figure \ref{fig: Example5}
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h t b]

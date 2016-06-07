@@ -1,6 +1,6 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
 \SetSemester{Spring 2016}
 \SetHandoutTitle{Lecture 8: Linearity and Superposition}
@@ -12,13 +12,6 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#3 due Lesson 10
-\item Problem set \#2 due Lesson 10
-\item Quiz \#2 during Lesson 10
-\item GR \#1 Lesson 12
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -35,28 +28,20 @@
 \item [Optional]: None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 3.36, 3.38--- Due Lesson 10
-\item [Recommended textbook problems]: 3.39
-\end{description}
-
 
 \section{What does it mean for a circuit to be Linear?}
 Circuits are linear when they can be modeled using only linear elements and independent sources.  Further any linear circuit will obey the following 2 principles:
 \begin{description}
-\item[Homogeneity]-- outputs are proportional to the inputs. This is also referred to as \textbf{proportionality}.
+\item[Homogeneity]: outputs are proportional to the inputs. This is also referred to as \textbf{proportionality}.
 \item[Additivity]: output due to multiple inputs can be found by finding the output due to each individual input and then adding them.  This is also referred to as \textbf{superposition}; we will devote an entire section to this later.
 \end{description}
 
 Mathematically these properties are written as:
 \soln{3}{
-\begin{equation}
-f(Kx) = Kf(x)
-\end{equation}
-\begin{equation}
-f(x_1+x_2)=f(x_1)+f(x_2)
-\end{equation}
+\begin{eqnarray}
+f(Kx) = Kf(x) & & \textnormal{proportionality} \\
+f(x_1+x_2)=f(x_1)+f(x_2) & & \textnormal{superposition}
+\end{eqnarray}
 }
 
 \newpage
@@ -77,6 +62,13 @@ f(x_1+x_2)=f(x_1)+f(x_2)
 \includegraphics[width=0.8\textwidth]{Example1soln.jpg}
 \end{figure}
 }
+
+This also provides a useful tool, the voltage divider, which is just a ratio proportion of voltage drops across resistors.
+
+\begin{eqnarray}
+	\frac{v_{in}}{R_1 + R_2} = \frac{v_{out}}{R_2} \\
+	v_{out} = \frac{R_2}{R_1 + R_2} v_{in}
+\end{eqnarray}
 
 \newpage
 \clearpage
@@ -120,11 +112,12 @@ The steps for circuit analysis using superposition are:
 \clearpage
 \pagebreak
 
-\textbf{Example 3:} (Textbook Exercise 3-25) -- The circuit in Figure \ref{fig: Example3} contains two $R$--$2R$ modules.  Use superposition to find $v_O$.  NOTE: In images taken from the textbook, crossed wires are only connected if they are {\em dotted}.  For circuits that I draw on the board or ones I generate for notes, crossed wires are connections.  You will need to learn to infer from context...... If there are some {\em dotted} nodes, crossed wires without dots are not connected; if there are no dots, crossed wires are connected.
+\textbf{Example 3:} (Textbook Exercise 3-25) -- The circuit in Figure \ref{fig: Example3} contains two $R$--$2R$ modules.  Use superposition to find $v_O$.
+
 \begin{figure} [h t b]
 \centering
 \includegraphics[width=0.7\textwidth]{Example3.jpg}
-\caption{Circuit to accompany example 3}
+\caption{Circuit to accompany example 3. NOTE: In images taken from the textbook, crossed wires are only connected if they are {\em dotted}.  For circuits that I draw on the board or ones I generate for notes, crossed wires are connections.  You will need to learn to infer from context...... If there are some {\em dotted} nodes, crossed wires without dots are not connected; if there are no dots, crossed wires are connected.}
 \label{fig: Example3}
 \end{figure}
 
@@ -204,7 +197,7 @@ The steps for circuit analysis using superposition are:
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h t b]

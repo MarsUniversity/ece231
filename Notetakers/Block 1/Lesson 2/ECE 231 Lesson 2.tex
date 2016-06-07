@@ -1,10 +1,10 @@
 \documentclass{handout}
 
-\SetInstructor{ Lt Col James Phillips}
+% \SetInstructor{ Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 2: Resistors, Sources, Switches, KCL, KVL}
-%\SetDueDate{1 Jan 2016}
+
 %\ShowAllBlanks
 
 \showsoln \setsolncolor{red}
@@ -12,15 +12,7 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
 
-\begin{itemize}
-\item Skills review due today
-\item HW \#1 (lessons 1 \& 2) due Lesson 3
-\item HW \# 2 (lessons 3 \& 4) due Lesson 5
-\item Problem Set \# 1 due Lesson 5
-\item Quiz \# 1 during Lesson 6
-\end{itemize}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -37,12 +29,7 @@
 \item [Optional:]None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 2.5, 2.15, 2.17, 2.23 --- Due Lesson 3
-\item [Recommended textbook problems]: 2.6, 2.16, 2.22
-\item[Other]: Instructor Created Problem Set 1 --- Due Lesson 5
-\end{description}
+
 
 \section{A quick review of Resistors}
 We introduced resistors in last class along with Ohm's Law. Figure \ref{fig: Resistor_VI_Relationship} shows the resistor current--voltage ($i$--$v$) relationship.  We will develop $i$--$v$ relationships for other devices as we go along.
@@ -174,7 +161,7 @@ Kirchhoff's Current Law in words
 KCL in mathematics
 
 \begin{equation}
-\sum_{Node} i = 0 
+\sum_{Node} i = 0
 \end{equation}
 
 \begin{equation}
@@ -211,7 +198,7 @@ i_1 = i_2+i_3 \nonumber
 \label{fig: KCL_Example}
 \end{figure}
 
-The circuit in Figure \ref{fig: KCL_Example} is organized around 3 signal lines A, B \& C (assume lines are open circuits off both edges). 
+The circuit in Figure \ref{fig: KCL_Example} is organized around 3 signal lines A, B \& C (assume lines are open circuits off both edges).
 \begin{itemize}
 \item How many nodes are in this circuit?
 \item Write KCL equations for the circuit
@@ -226,7 +213,7 @@ KCL equations are:
 i_2+i_3+i_4=0 \nonumber \\
 i_3 = i_1+i_6 \\
 i_1+i_2+i_5=0 \nonumber \\
-i_4+i_6=i_5 \nonumber 
+i_4+i_6=i_5 \nonumber
 \end{eqnarray}
 
 We can use $i_1$ and $i_2$ to find $i_5$
@@ -266,7 +253,7 @@ We can rewrite our 4 equations in matrix form
 \end{array} \right ]
 \left [\begin{array}{r}
 i_1\\  i_2 \\ i_3 \\  i_4 \\ i_5 \\  i_6
-\end{array}\right ] = 
+\end{array}\right ] =
 \left [ \begin{array}{c}
 0 \\ 0 \\ 0 \\0
 \end{array} \right ]
@@ -302,7 +289,7 @@ Kirchhoffs Voltage Law in words:
 
 KVL in mathmatics:
 \begin{equation}
-\sum_{Loop} v = 0 
+\sum_{Loop} v = 0
 \end{equation}
 
 \begin{equation}
@@ -331,14 +318,14 @@ Loop 2
 6\ V - v_y - 1\ V= 0
 \end{equation}
 
-We can now solve each equation to see that $v_x=8\ V$ and $v_y = 5\ V$. 
+We can now solve each equation to see that $v_x=8\ V$ and $v_y = 5\ V$.
 }
 
 \newpage
 \pagebreak
 \clearpage
 
-\textbf{KVL Example 2:} Find $v_x$, $v_y$, and $v_z$ in the circuit shown in Figure \ref{fig: KVL_Example_2}. [Exercise 2-6 from text]. This example is a little unique in that we are going to define a loop where one does not physically exist. 
+\textbf{KVL Example 2:} Find $v_x$, $v_y$, and $v_z$ in the circuit shown in Figure \ref{fig: KVL_Example_2}. [Exercise 2-6 from text]. This example is a little unique in that we are going to define a loop where one does not physically exist.
 
 \begin{figure}[h b t]
 \centering
@@ -377,7 +364,7 @@ Loop 3
 v_y + 5\ V - v_z = 0
 \end{equation}
 
-We can now solve each equation to see that $v_x=25\ V$, $v_y = 5\ V$, and $v_z = 10\ V$. 
+We can now solve each equation to see that $v_x=25\ V$, $v_y = 5\ V$, and $v_z = 10\ V$.
 }
 
 \newpage
@@ -414,7 +401,7 @@ We can now solve each equation to see that $v_x=25\ V$, $v_y = 5\ V$, and $v_z =
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure}[h b t]

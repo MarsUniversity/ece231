@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{ Lt Col James Phillips}
+% \SetInstructor{ Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 3: Equivalent Reistance, $R_{eq}$}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
@@ -12,13 +12,6 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{itemize}
-\item HW \#1 (lessons 1 \& 2) due today
-\item HW \# 2 (lessons 3 \& 4) due Lesson 5
-\item Problem Set \# 1 due Lesson 5
-\item Quiz \# 1 during Lesson 6
-\end{itemize}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -37,12 +30,6 @@
 \item [Optional]: None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 2.25, 2.27, 2.29, 2.30, 2.35, 2.39, 2.43 --- Due Lesson 5
-\item [Recommended textbook problems]: 2.26, 2.32, 2.52
-\item[Other]: None
-\end{description}
 
 
 \section{Series and Parallel Combinations}
@@ -88,17 +75,17 @@ In Figure \ref{fig: Parallel_Resistors}, devices 1,  2, and 3 are all  in parall
 \end{figure}
 
 \section{Equivalent Circuits}
-In this section we will discuss how to simplify circuits by combining resistors into equivalent resistance values and doing source transformation.  
+In this section we will discuss how to simplify circuits by combining resistors into equivalent resistance values and doing source transformation.
 
 \begin{description}
 \item [Equivalent Circuits] are circuits that have identical voltage-current relationships at a given pair of terminals
 \end{description}
 
 \subsection{Equivalent Resistance, $R_{eq}$}
-The first step in being able to analyze equivalent circuits is to be able to combine resistors into a total (or equivalent) resistance.  The method for combining parallel and series resistors is different and we will derive both here.
+The first step in being able to analyze equivalent circuits is to be able to combine resistors into a total (or equivalent) resistance.  The method for combining parallel and series resistors is different and we will derive both here. An analogy for this idea of equivalent circuits is money: \$1 is equal to 4 quarters. They are the same amount of money, just comprised of different components.
 
 \subsubsection{Series $R_{eq}$}
-To derive an equation for equivalent resistance in series circuites, lets look the circuit shown in Figure \ref{fig: Series_Resistors}. We can write a KVL equation for this circuit:
+To derive an equation for equivalent resistance in series circuits, lets look the circuit shown in Figure \ref{fig: Series_Resistors}. We can write a KVL equation for this circuit:
 
 \soln{1in}{
 \begin{equation}
@@ -106,7 +93,7 @@ v_{AB}-v_1-v_2 = 0
 \end{equation}
 }
 
-We can define currents going into resistors $R_1$ and $R_2$ as $i_1$ and $i_2$ respectively.  Because of the Passive Sign Convention, the currents flow into the positive nodes of the resistors. Using that we can rewrite teh KVL equation as
+We can define currents going into resistors $R_1$ and $R_2$ as $i_1$ and $i_2$ respectively.  Because of the Passive Sign Convention, the currents flow into the positive nodes of the resistors. Using that we can rewrite the KVL equation as
 
 \soln{1in}{
 \begin{equation}
@@ -119,7 +106,7 @@ By examining the circuit (and from our definition of series resistors) we should
 \soln{1in}{
 \begin{eqnarray}
 v_{AB}-iR_1-iR_2 &=& 0 \\
-v_{AB}-i(R_1+R_2) &=& 0 \nonumber 
+v_{AB}-i(R_1+R_2) &=& 0 \nonumber
 \end{eqnarray}
 }
 
@@ -204,7 +191,7 @@ R_{eq}=\frac{R_1R_2}{R_1+R_2}
 \end{equation}
 }
 
-If both resistors are equal resistance values, then this simplies to 
+If both resistors are equal resistance values, then this simplies to
 
 \soln{1in}{
 \begin{equation}
@@ -226,6 +213,7 @@ Find the equivalent resistance between terminals A-C, B-D, A-D, \& B-C in Figure
 \label{fig: Ex2_15}
 \end{figure}
 
+
 \soln{6in}{
 \begin{figure}[h t b]
 \centering
@@ -246,6 +234,17 @@ Find the equivalent resistance between terminals A-B, A-C, A-D, B-C, B-D, \& C-D
 \label{fig: Ex2_16}
 \end{figure}
 
+\soln{1in}{
+\begin{eqnarray}
+	AB = 80||80+60 \nonumber \\
+	AC=80||80+30 \nonumber \\
+	AD = 80||80+25 \nonumber \\
+	BC = 60+80+80+30 \nonumber \\
+	BD = 60+25 \nonumber \\
+	CD = 30+25 \nonumber 
+\end{eqnarray}
+}
+
 \soln{6in}{
 \begin{figure}[h t b]
 \centering
@@ -264,19 +263,19 @@ Find the equivalent resistance between terminals A-B, A-C, A-D, B-C, B-D, \& C-D
 
 \section{Review Questions}
 \begin{questions}
-\item When resistors are in parallel, $R_{eq}$ is bigger or smaller than the individual component resistances? 
+\item When resistors are in parallel, $R_{eq}$ is bigger or smaller than the individual component resistances?
 
 \soln{1in}{Smaller}
 
-\item What does $G$ represent? 
+\item What does $G$ represent?
 
 \soln{1in}{Conductance, $\frac{1}{R}$}
 
-\item How do you know if resistors are in series? 
+\item How do you know if resistors are in series?
 
 \soln{1in}{They share only one common node and no other devices share that node.  All the current from one device flows into the second device.}
 
-\item True or False.... Resistors in series have the same voltage drop across them. 
+\item True or False.... Resistors in series have the same voltage drop across them.
 
 \soln{1in}{True}
 
@@ -296,10 +295,10 @@ Find the equivalent resistance between terminals A-B, A-C, A-D, B-C, B-D, \& C-D
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
-%\begin{figure} 
+%\begin{figure}
 %\centering
 %\includegraphics[width=0.5\textwidth]{OhmsLawExampleSolution.jpg}
 %\caption{Ohm's Law example circuit}

@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 10: Maximum Power Transfer}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
@@ -12,12 +12,6 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#3 due today
-\item Problem set \#2 today
-\item Block 2 Skills Review due Lesson 14
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -33,11 +27,6 @@
 \item [Optional]: None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 3.71, 3.72--- Due Lesson 17
-\item [Recommended textbook problems]: 3.75
-\end{description}
 
 \section{Maximum Power Transfer}
 As discussed in last lesson, an interface is a connection between two circuits where a signal level can be observed, measured or specified.  But what is the maximum signal level that can be transfered across an interface?  That is what we will explore this lesson.  For the purposes of this discussion, we will only consider examples where both the source circuit and the load circuit are linear resistive circuits; see Figure \ref{fig: Source_Load}.
@@ -62,7 +51,7 @@ This is the condition when the power consumed by the load is at its maximum.
 
 Assume in this discussion that we cannot control $R_T$.  This entire discussion will reference Figure \ref{fig: Source_Load}
 
-Start by wrting an equation for the voltage across the load resistor:
+Start by writing an equation for the voltage across the load resistor:
 \soln{1in}{
 \begin{equation}
 v_{Load}=\frac{R_L}{R_L+R_T}V_T
@@ -80,11 +69,13 @@ i_{Load}=\frac{V_T}{R_L + R_T}
 It should be easy to see that $i_{Load}$ grows as $R_L$ get smaller. If $R_L=0$ this $i_{Load}=i_{sc}=\frac{V_T}{R_T}$
 }
 
-But 
+But
 \begin{equation}
 P_{Load}=v_{Load}i_{Load}
 \end{equation}
-which is
+
+which, using previous equations, is:
+
 \soln{1in}{
 \begin{equation}
 P_{Load}=\frac{R_L}{R_L+R_T}V_T\frac{V_T}{R_L + R_T}
@@ -135,10 +126,13 @@ R_L=R_T
 \textbf{Now found the value for $R_T$ that give max power, what is the maximum power delivered?}
 \soln{2in}{
 Plug $R_L=R_T$ into the power equation and solve to get
-\begin{equation}
-P_{Load}=\frac{R_TV_T^2}{(2R_L)^2}= \frac{R_TV_T^2}{4R_T^2}=\frac{V_T^2}{4R_T}
-\end{equation}
+\begin{eqnarray}
+P_{Load}=\frac{R_TV_T^2}{(2R_L)^2}= \frac{R_TV_T^2}{4R_T^2}=\frac{V_T^2}{4R_T}=P_{MAX} \\
+P_{MAX}=\frac{V_T^2}{4R_T}=\frac{V_T i_N}{4}=\frac{i_N^2 R_T}{4}
+\end{eqnarray}
 }
+
+Note, $P_{MAX}$ does not imply maximum efficiency too (see book p. 117 for more details).
 
 \section{Examples}
 \subsection{Example 1 - Textbook Exercise 3-33}
@@ -205,7 +199,7 @@ For the circuit shown in Figure \ref{fig: Example3}, find the value of $R_L$ tha
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h t b]
