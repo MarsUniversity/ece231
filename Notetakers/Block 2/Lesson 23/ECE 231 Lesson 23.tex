@@ -8,19 +8,22 @@
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{mytheo}{Definition}%
+{colback=yellow!5,colframe=yellow!35!black,fonttitle=\bfseries}{th}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \showsoln \setsolncolor{red}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 4 due Today
-\item Homwork \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz \# 4 Lesson 26
-\item GR \#2 during Lesson 27
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -32,20 +35,32 @@
 \item [Required]:
 Handout
 
-\item [Optional]: 
+\item [Optional]:
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required problems]: Handout S1, S2, S3
-\item [Recommended textbook problems]: Handout S4
-\end{description}
+\begin{tcolorbox}[title=My heading line, title filled, rounded corners]
+This is a \textbf{tcolorbox}.
+\end{tcolorbox}
+
+
+\begin{mytheo}{This is my title}{theoexample}
+  This is the text of the theorem. The counter is automatically assigned and,
+  in this example, prefixed with the section number. This theorem is numbered with
+  \ref{th:theoexample} and is given on page \pageref{th:theoexample}.
+\end{mytheo}
 
 \section{Introduction}
 In lesson 21 we did a refresher on how to solve first order, homogeneous differential equations.  Today we are going to look at one more method for solving this class of equation.  The method we will introduce today is called {\em integrating factor}.  While I do not think it is as intuitive as seperation of variables or undetermined coefficients, the benefit is it gets the total solution in a single step.  Recall for the previous methods we have to first solve for the natural response and then solve for the forced response and finally add them to determine the total response.  Integrating factor does all this in a single step.
 
+\theoremstyle{definition}
+\begin{definition}{Homogeneous}
+	blah <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\end{definition}
 
-
+\theoremstyle{definition}
+\begin{definition}{Non-Homogeneous}
+	blah <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+\end{definition}
 
 \section{Integrating Factor Basics}
 Integrating factor can solve homogeneous or non-homogeneouse differential equations, but is most useful for non-homgeneous equations of the form:
@@ -91,7 +106,7 @@ We notice
 \[
 P(t)  = 10
 \]
-and 
+and
 \[
 F(t) = 4e^{40t}
 \]
@@ -107,16 +122,16 @@ which equals
 \[
 v(t) = \frac{4}{50}\frac{e^{50t}+C}{e^{10t}} = 12.5e^{40t} + Ce^{-10t}
 \]
-The forced response is 
+The forced response is
 \[
-v_F(t) =  0.080e^{40t} 
+v_F(t) =  0.080e^{40t}
 \]
 and teh natural response is
 \[
 v_N(t) = Ce^{-10t}
 \]
 
-If we had initial conditions they could be used to solve for $C$. 
+If we had initial conditions they could be used to solve for $C$.
 
 }
 
@@ -133,9 +148,9 @@ Answer the questions below for the circuit shown in Figure \ref{fig: Example2}
 \label{fig: Example2}
 \end{figure}
 
-(a) Find $i_L(0)$ -- 
+(a) Find $i_L(0)$ --
 (b) Redraw the circuit for $t>0$ and use KVL or KCL to derive the differential equation in terms of $i_L(t)$ --
-(c) Use the integrating factor technique to find the general solution for $i_L(t)$-- 
+(c) Use the integrating factor technique to find the general solution for $i_L(t)$--
 (d) Use the initial condition (from part a) to find the particular solution for  $i_L(t)$
 
 \soln{5in}{
@@ -158,9 +173,9 @@ Answer the questions below for the circuit shown in Figure \ref{fig: Example3}
 \label{fig: Example3}
 \end{figure}
 
-(a) Find $i_L(0)$ (pay attention to the step function on the input)-- 
+(a) Find $i_L(0)$ (pay attention to the step function on the input)--
 (b) Redraw the circuit for $t>0$ and use KVL or KCL to derive the differential equation in terms of $i_L(t)$ --
-(c) Use the integrating factor technique to find the general solution for $i_L(t)$-- 
+(c) Use the integrating factor technique to find the general solution for $i_L(t)$--
 (d) Use the initial condition (from part a) to find the particular solution for  $i_L(t)$
 (e) Write an equation for $v_{out}(t)$
 
@@ -234,7 +249,7 @@ Hint: You will need to use the following integral:
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]
