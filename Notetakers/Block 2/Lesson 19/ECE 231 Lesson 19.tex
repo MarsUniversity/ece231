@@ -1,6 +1,6 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
 \SetSemester{Spring 2016}
 \SetHandoutTitle{Lecture 19: Time Varying Signals}
@@ -12,14 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 4 due Lesson 23
-\item HW \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz 4 Lesson 26
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -37,12 +29,6 @@
 \item  Textbook, section 5.1--5.5, pages 240--261
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 5.2, 5.14, 5.22, 5,27a (MatLab only)--- Due Lesson 23
-\item [Recommended textbook problems]: 5.25, 5.37
 \end{description}
 
 \section{Introduction to time varying signals}
@@ -68,7 +54,7 @@ We will also show how these waveforms can be combined to synthesize more complex
 We start with the simplest of our new signals.  The unit step function is simply zero before time $t<0$ and equal to 1 for time $t\ge0$.  Mathematically,
 \soln{1in}{
 \begin{equation}
-u(t) = 
+u(t) =
 \begin{cases}
 0 &\text{for $t<0$}\\
 1 &\text{for $t\ge0$}
@@ -117,7 +103,7 @@ The arguement of this step function equals zero when $t = 10$
 }
 
 
-\textbf{Adding and subtracting unit step functions}--Next we will look at adding and subtracting shifted and scaled step funtions to create composite functions.  
+\textbf{Adding and subtracting unit step functions}--Next we will look at adding and subtracting shifted and scaled step funtions to create composite functions.
 
 \textbf{Example 3 - Creating a pulse}--Can we write an equation for a single pulse with amplitude 2.  The pulse should be on for $8s\le t\le 15s$.
 
@@ -180,7 +166,7 @@ r(t) = tu(t)
 which can be expanded (for clarity)
 \soln{1.5in}{
 \begin{equation}
-r(t) = 
+r(t) =
 \begin{cases}
 0 &\text{for $t<0$}\\
 t &\text{for $t\ge0$}
@@ -199,7 +185,7 @@ It should be obvious that this function (for positive $t$) is just a ramp with $
 
 \soln{1.5in}{
 \begin{equation}
-A\times r(t) = 
+A\times r(t) =
 \begin{cases}
 A \times 0  = 0 &\text{for $t<0$}\\
 A \times t = At &\text{for $t\ge0$}
@@ -217,7 +203,7 @@ We change the slope for $t>0$.  See figure below to see $r(t)$ and $5r(t)$ on th
 \soln{1.5in}{
 Yes!, just like we shift a unit step
 \begin{equation}
-r(t-t_0) = 
+r(t-t_0) =
 \begin{cases}
 0 &\text{for $t<t_0$}\\
 t-t_0 &\text{for $t\ge t_0$}
@@ -229,7 +215,7 @@ It should also be clear that you can combine the two properties above to get a s
 \soln{1.5in}{
 
 \begin{equation}
-Ar(t-t_0) = 
+Ar(t-t_0) =
 \begin{cases}
 0 &\text{for $t<t_0$}\\
 A(t-t_0) &\text{for $t\ge t_0$}
@@ -249,11 +235,11 @@ To understand an impulse function, lets start by writing an equation of a unit a
 What happens if we take the limit of this function as $T\rightarrow 0$?
 
 \soln{1in}{
-The pulse getters narrower and the amplitude gets higher, but the area always stays 1.  In the limit you have a zero width pulse with inifinite amplitude and area 1.  Mathematicians will have to forgive me..... We call this a delta function.  
+The pulse getters narrower and the amplitude gets higher, but the area always stays 1.  In the limit you have a zero width pulse with inifinite amplitude and area 1.  Mathematicians will have to forgive me..... We call this a delta function.
 
 Mathematically
 \begin{equation}
-\delta (t) = 
+\delta (t) =
 \begin{cases}
 0 &\text{for $t\neq 0$}\\
 \infty &\text{for $t=0$}
@@ -266,10 +252,10 @@ It should also be noted that the delta function is related to the unit step by
 \delta (t) = \frac{\partial u(t)}{\partial t}
 \end{equation}
 
-Since this function is related to the unit step and the unit step can be shifted, so can the delta function.  
+Since this function is related to the unit step and the unit step can be shifted, so can the delta function.
 \soln{2in}{
 \begin{equation}
-\delta (t-t_0) = 
+\delta (t-t_0) =
 \begin{cases}
 0 &\text{for $t\neq t_0$}\\
 \infty &\text{for $t=t_0$}
@@ -354,7 +340,7 @@ f(t) =A e^{-\frac{t}{T_c}}u(t)
 
 Where A is the amplitude and $T_c$ is the time constant (as before).
 }
- 
+
  \textbf{Example 5} -- Plot $f(t) = 4e^{-1000t}u(t)$ and determine with the function is effectively equal to zero.
 
 \soln{4in}{
@@ -396,7 +382,7 @@ The plot is shown below:
 \section{Sinusoids}
 Understanding sinusoids is critical to the study of many areas of science and engineering; this is very true in our study of electrical circuits.
 
-Note: All the functions we have defined above are zero for $t<0$; for our sinusoids we will assume they exist for all time, $-\infty<t<\infty$. 
+Note: All the functions we have defined above are zero for $t<0$; for our sinusoids we will assume they exist for all time, $-\infty<t<\infty$.
 
 \subsection{Sinusoid Basics}
 
@@ -405,7 +391,7 @@ A simple sinusoid can be expressed as either a sine or a cosine function
 \begin{eqnarray}
 f_1(t) &=&sin\left\{\frac{2\pi  t}{T_0}  \right\} \nonumber \\
 f_2(t) &=&cos\left\{\frac{2\pi  t}{T_0}  \right\} \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 }
 where $T_0$ is the period of the sinusoid
 
@@ -446,7 +432,7 @@ We can exapand this eqaution to show that the time shift can also be represented
 \begin{equation}
 f(t) = A\cos\left\{\frac{2\pi t}{T_0}-\frac{2\pi T_s}{T_0}  \right\} = A\cos\left\{\frac{2\pi t}{T_0}+\phi \right\}
 \end{equation}
-is should be evident that 
+is should be evident that
 \begin{equation}
 \phi = -\frac{2\pi T_s}{T_0}
 \end{equation}
@@ -568,7 +554,7 @@ OR USE MATLAB!
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

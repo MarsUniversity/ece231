@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 34:Filters II -- Low and High Pass Filters}
 
 %\SetDueDate{1 Jan 2016}
@@ -13,13 +13,6 @@
 \begin{document}
 \maketitle
 
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 7 due Lesson 37
-\item Quiz \# 6 Lesson 37
-\item GR \# 3 Lesson 38
-\end{enumerate}
-
 \textbf{OBJECTIVES:}
 \begin{enumerate}
 \item ....
@@ -29,13 +22,7 @@
 \begin{description}
 \item [Required]:
 Filters Handout (Available on Sharepoint), pgs 14-34
-\item [Optional]: 
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required problems]: 
-\item [Recommended textbook problems]: 2--1, 2--2, 3--1, 3--2 (Handout)
+\item [Optional]:
 \end{description}
 
 \section{Introduction}
@@ -48,7 +35,7 @@ Last lesson we talked about transfer functions; this lesson we will discuss filt
 \item [Stopband] -- The stop band of a filter is the band of frequencies where signals are blocked
 \end{description}
 
-For an ideal filter, the value of the cut-off frequency is obvious, but how do we define the cut-off frequency for a real filter?  
+For an ideal filter, the value of the cut-off frequency is obvious, but how do we define the cut-off frequency for a real filter?
 \soln{1in}{
 \[
 K(\omega_c)  = \frac{K_{max}}{\sqrt{2}}
@@ -95,7 +82,7 @@ Where $K$ is the gain and $\omega_c$ is the cut-off frequency
 \clearpage
 \pagebreak
 
-\textbf{Example 1} -- Plot the transfer function of 
+\textbf{Example 1} -- Plot the transfer function of
 \[
 H(j\omega) = \frac{20,000}{j\omega +1000}
 \]
@@ -167,7 +154,7 @@ H_{HPF}(j\omega) = K\frac{j\omega}{j\omega +\omega_c}
 Where $K$ is the gain and $\omega_c$ is the cut-off frequency
 }
 
-\textbf{Example 2} -- Plot the transfer function of 
+\textbf{Example 2} -- Plot the transfer function of
 \[
 H(j\omega) = \frac{j20\omega}{j\omega +1000}
 \]
@@ -315,7 +302,7 @@ Most of our magnitude plots will be shown in dB.  Figure \ref{fig: dB} shows a m
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

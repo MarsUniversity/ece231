@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 16: Operational Amplifiers - Part 3: Circuit Design}
 
 %\SetDueDate{1 Jan 2016}
@@ -12,13 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#4 due next lesson
-\item Problem Set \#3 due Lesson 18
-\item Quiz \#3 during Lesson 18
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -34,12 +27,6 @@
 \item [Optional]: None
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 4.43,4.52, 4.56 --- Due Lesson 17
-\item [Recommended textbook problems]: 4.45, 4.59
-\end{description}
-
 \section{Review of our Op Amp {\em Building Blocks}}
 In this section, I will offer a quick review of our four Op Amp building block circuits plus one new one:
 \begin{enumerate}
@@ -52,7 +39,7 @@ In this section, I will offer a quick review of our four Op Amp building block c
 
 This list is not all inclusive.
 
-In addition, I will show figures with the Op Amps inputs connected to thevenin circuits.  These circuits can represent non-ideal sources (with internal resistances) or any resistive circuit.  This will allow us to further explore the concept of loading at the input terminals. 
+In addition, I will show figures with the Op Amps inputs connected to thevenin circuits.  These circuits can represent non-ideal sources (with internal resistances) or any resistive circuit.  This will allow us to further explore the concept of loading at the input terminals.
 
 \newpage
 \clearpage
@@ -69,7 +56,7 @@ Figure \ref{fig: NonInvertingAmplifier} shows a non-inverting amplifier connecte
 \end{figure}
 
 \subsection{Inverting Amplifier}
-Figure \ref{fig: InvertingAmplifier} shows an inverting amplifier connected to a thevenin circuit; as mentioned above, this input circuit can represent a non-ideal source or any other resistive circuit.  
+Figure \ref{fig: InvertingAmplifier} shows an inverting amplifier connected to a thevenin circuit; as mentioned above, this input circuit can represent a non-ideal source or any other resistive circuit.
 
 \begin{figure} [h!]
 \centering
@@ -136,7 +123,7 @@ To start our design, lets do a quick block diagram:
 \includegraphics[width=0.6\textwidth]{CascadedGain.jpg}
 \end{figure}
 
-The transfer characteristic of this block diagram is 
+The transfer characteristic of this block diagram is
 \begin{equation}
 V_{out}=K_1K_2V_{in}
 \end{equation}
@@ -156,7 +143,7 @@ Let's try for a stage 1 gain of $K_1=500$
 
 For stage 1 let's select $R_2 = 1\ k\Omega$ and solve for $R_1$ (recall for a non-inverting amp $K=\frac{R_1+R_2}{R_2}$)
 \begin{equation}
-R_1 = R_2K_1-R_2 = 1\ k\Omega \times 500 - 1\ k\Omega = 499\ k\Omega 
+R_1 = R_2K_1-R_2 = 1\ k\Omega \times 500 - 1\ k\Omega = 499\ k\Omega
 \end{equation}
 The closest standard resistance value to $499\ k\Omega$ is $470\ k\Omega$ which give an actual gain of
 \begin{equation}
@@ -165,7 +152,7 @@ K_1=\frac{R_1+R_2}{R_2}=\frac{470\ k\Omega+1\ k\Omega}{1\ k\Omega}=471
 We need a stage 2 gain of $\frac{100,000}{471}=212.3$
 Let's use $R_2=2\ k\Omega$ and solve for $R_1$:
 \begin{equation}
-R_1 = R_2K_1-R_2 = 2\ k\Omega \times 212.3 - 2\ k\Omega = 422.6\ k\Omega 
+R_1 = R_2K_1-R_2 = 2\ k\Omega \times 212.3 - 2\ k\Omega = 422.6\ k\Omega
 \end{equation}
 so we can use an actual value of $R_1 = 430\ k\Omega$ which gives a stage gain of
 \begin{equation}
@@ -188,7 +175,7 @@ Let's redo the design with inverting amplifiers:
 \includegraphics[width=0.7\textwidth]{CascadedInvertingAmps.jpg}
 \end{figure}
 
-Since we cascaded two inverting amps we will get a positive overall gain which is what we are after.  
+Since we cascaded two inverting amps we will get a positive overall gain which is what we are after.
 
 But, we have to examine any loading issues.....
 
@@ -198,7 +185,7 @@ What is the gain of the first stage?
 K_1 = -\frac{R_2}{R_1+R_T}
 \end{equation}
 
-It should be already obivious that the resistance of the source is going to affect the gain of the first stage and ultimately the entire system.  Good news is stages do not load each other, so there will be no loading problems on the second stage.  
+It should be already obivious that the resistance of the source is going to affect the gain of the first stage and ultimately the entire system.  Good news is stages do not load each other, so there will be no loading problems on the second stage.
 
 Let's finish the design assuming an $R_T = 100\ \Omega$... Try and get a stage 1 gain of $K_1 = -500$; select $R_1 = 1\ k\Omega$ and solve for $R_2$:
 \begin{equation}
@@ -212,7 +199,7 @@ so for our second stage we need a gain of $\frac{100,000}{-509}=-196.5$.  Let's 
 \begin{equation}
 R_4 = -K_2R_3 = 196.5\times1\ k\Omega = 196.5\ k\Omega
 \end{equation}
-the closest standard value is $R_4 = 200\ k\Omega$ which gives an actual stage 2 gain of 
+the closest standard value is $R_4 = 200\ k\Omega$ which gives an actual stage 2 gain of
 \begin{equation}
 K_2 = -\frac{R_4}{R_3} = -\frac{200\ k\Omega}{1\ k\Omega} = -200
 \end{equation}
@@ -221,7 +208,7 @@ giving a total gain of
 K = K_1K_2 = -509 \times -200 = 101,800
 \end{equation}
 What happens to the total gain if $R_T = 1\ k\Omega$?
-Stage one gain changes to 
+Stage one gain changes to
 \begin{equation}
 K_1 = -\frac{560\ k\Omega}{1\ k\Omega + 1\ k\Omega}=-280
 \end{equation}
@@ -342,7 +329,7 @@ Here is a single stage design that uses 1 Op Amp and 4 resistors
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h! t! b!]

@@ -1,6 +1,6 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
 \SetSemester{Spring 2016}
 \SetHandoutTitle{Lecture 21: RC and RL Circuit Natural Response}
@@ -12,14 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 4 due Lesson 23
-\item Homwork \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz \# 4 Lesson 26
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -33,12 +25,6 @@
 \item  Textbook, section 7.1, pages 314--324
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 7.7, 7.10 (for each problem derive each differential equation for $t>0$ and solve using seperation of variables)--- Due Lesson 23
-\item [Recommended textbook problems]: 7.11
 \end{description}
 
 \section{A Brief Review of Differential Equations Solution Techniques}
@@ -74,7 +60,7 @@ Solving for v(t) gives
 \begin{equation}
 v(t)=e^{-\frac{t}{RC} +K}
 \end{equation}
-but this simplifies to 
+but this simplifies to
 \begin{equation}
 v(t)=K'e^{-\frac{t}{RC}}
 \end{equation}
@@ -251,7 +237,7 @@ So our final circuit response is:
 \soln{0.5in}{
 \[
 v_c(t)=V_0e^{-\frac{t}{RC}}
-\] 
+\]
 }
 
 \begin{figure} [h!]
@@ -379,7 +365,7 @@ which equals
 \[
 v_c(t) - i_R(t)R = 0
 \]
-but we also know that $i_R(t) =-i_c(t)$ (watch signs using passive sign convention) and that 
+but we also know that $i_R(t) =-i_c(t)$ (watch signs using passive sign convention) and that
 \[
 i_c(t) = C\frac{\partial v_c(t)}{\partial t}
 \]
@@ -511,7 +497,7 @@ For the circuit shown in Figure \ref{fig: Example5}, find $i_l(t)$ and $v(t)$
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

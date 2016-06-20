@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 22: RC and RL Circuit Forced Response}
 
 %\SetDueDate{1 Jan 2016}
@@ -12,15 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 4 due Lesson 23
-\item Homwork \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz \# 4 Lesson 26
-\item GR \#2 during Lesson 27
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -35,14 +26,8 @@ Textbook, section 7.2--7.3, pages 324--338
 \item [Optional]: Textbook, section 7.4, pages 338--345
 \end{description}
 
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 7.13, 7.14, 7.15 (for each problem derive each differential equation for $t>0$ and solve using undetermined coefficients)--- Due Lesson 23
-\item [Recommended textbook problems]: 7.16
-\end{description}
-
 \section{Introduction}
-In the last lesson we talked about circuit responses with no forcing function.  What I mean by that is a source was part of the circuit long enough for the circuit to reach steady state; from there we flipped a switch that removed the source from the circuit and we examined the transient response (in the absence of a source).  We called this the natural response of the circuit.  
+In the last lesson we talked about circuit responses with no forcing function.  What I mean by that is a source was part of the circuit long enough for the circuit to reach steady state; from there we flipped a switch that removed the source from the circuit and we examined the transient response (in the absence of a source).  We called this the natural response of the circuit.
 
 Today we will look at circuits where there is a source in the final circuit.  The response to these circuits will have two parts, the natural response (which we have already covered) and the forced response (which is today's topic).  The priniciple of superposition allows us to look at each response independently and then sum to get the total response:
 \soln{0.5in}{
@@ -74,7 +59,7 @@ v_N(t) = Ke^{-\frac{t}{RC}} \quad \quad t\ge0
 
 If we were only solving for the natural response, at this point we would use the initial conditions to solve for $K$.  However, since we are looking for the total response we will have to wait to find $K$ after we look at the forced response.
 
-The forced response is the solution to 
+The forced response is the solution to
 \soln{0.75}{
 \[
 RC\frac{\partial v_F(t)}{\partial t}+v_F(t) = V_A \quad \quad t\ge0
@@ -126,7 +111,7 @@ It should be obvious that the initial value is $v(0) = V_0$ and the final value 
 
 \soln{6in}{
 Step 1 - Find the intial value of $v_c(t)$
-If we assume the the switch has been in position a for a long time (that is the circuit is in steady state), we can treat the capacitor as an open circuit and recognize that $v_c(0^-)=v_{oc}$.  Since the capacitor is an open circuit and no current flows in the loop, 
+If we assume the the switch has been in position a for a long time (that is the circuit is in steady state), we can treat the capacitor as an open circuit and recognize that $v_c(0^-)=v_{oc}$.  Since the capacitor is an open circuit and no current flows in the loop,
 \[
 v_c(0^-) = 40\ V
 \]
@@ -136,7 +121,7 @@ v_c(0^+) = 40\ V
 \]
 
 Step 2 - Find the final value of $v_c(t)$ that is find $v_c(\infty)$
-Using the same logic as in step 1, it should be clear that 
+Using the same logic as in step 1, it should be clear that
 \[
 v_c(\infty) = 12\ V
 \]
@@ -150,15 +135,15 @@ where $V_0$ is the initial value of $v_c$ and $V_A$ is its final value; $R$ is t
 Step 4 - Plug in values to arrive at
 \[
 v_c(t) = 28e^{-1000t} + 12 \quad \quad t\ge0
-\] 
-which can also be written as 
+\]
+which can also be written as
 \[
 v_c(t) = (28e^{-1000t} + 12)u(t)
-\] 
+\]
 
 Step 5 - Find $i(t)$.  We can find $i(t)$ using two methods.
 
-Method 1 - Use Ohms law 
+Method 1 - Use Ohms law
 
 Note that the $i(t)$ flows through the $6.25\ k\Omega$ resistor.  The voltage across the resistor is $v_c(t) -12\ V$ (write a KVL equation if necessary to see that).  This means that:
 \[
@@ -187,7 +172,7 @@ $v(t)$ and $i(t)$ are plotted below:
 \begin{figure} [h!]
 \centering
 \includegraphics[width=1\textwidth]{Example1_plots.jpg}
-\end{figure} 
+\end{figure}
 }
 
 
@@ -195,7 +180,7 @@ $v(t)$ and $i(t)$ are plotted below:
 \clearpage
 \pagebreak
 
-\textbf{Example 2}  -- For the circuit shown in Figure \ref{fig: Example2}, find $v_c(t)$ and $i(t)$.  
+\textbf{Example 2}  -- For the circuit shown in Figure \ref{fig: Example2}, find $v_c(t)$ and $i(t)$.
 
 \begin{figure} [h!]
 \centering
@@ -238,7 +223,7 @@ We can re-write this as
 \[
 \frac{3}{2}\frac{\partial v_{c-f}(t)}{\partial t} +v_{c-f}(t)= 45
 \]
-One solution to this equation is to let $v_{c-f}(t) =45\ V$.  If $v_{c-f}(t)$ is constant the derivative vanishes. 
+One solution to this equation is to let $v_{c-f}(t) =45\ V$.  If $v_{c-f}(t)$ is constant the derivative vanishes.
 
 Out complete solution is the sum of the natural response and the forced response
 \[
@@ -248,13 +233,13 @@ It should be easily seen that $v_c(0) = 60\ V$.  We can use this intial conditio
 \[
 60 = Ke^{-\frac{2\times 0}{3}} + 45
 \]
-Therfore $K=15$. So finally we arrive at 
+Therfore $K=15$. So finally we arrive at
  \[
 v_c(t) = (15e^{-\frac{2t}{3}} + 45)u(t)
 \]
 where the $u(t)$ is because this result is only valid for $t>0$.
 
-By inspection of the circuit we see that 
+By inspection of the circuit we see that
 \[
 i(t) = \frac{v_c(t)-40}{1\ \Omega} = (15e^{-\frac{2t}{3}} + 5)u(t)
 \]
@@ -294,7 +279,7 @@ R_T = 3\ \Omega||1\ \Omega = \frac{3}{4}\ \Omega
 \]
 From here we find $\tau$
 \[
-\tau =R_TC= \frac{3}{4}\ \Omega \times 2F = \frac{3}{2}s 
+\tau =R_TC= \frac{3}{4}\ \Omega \times 2F = \frac{3}{2}s
 \]
 Finally recall our standard solution has the form
 \[
@@ -374,7 +359,7 @@ i(t) = \left[( I_0-I_A)e^{_\frac{R_Tt}{L}}+ I_A\right]u(t)
 \clearpage
 \pagebreak
 
-\textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3}, find $i(t)$ for $t>0$  (notice this is equal to $i_l(t)$.  
+\textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3}, find $i(t)$ for $t>0$  (notice this is equal to $i_l(t)$.
 \begin{figure} [h!]
 \centering
 \includegraphics[width=0.7\textwidth]{Example3.jpg}
@@ -412,7 +397,7 @@ We can write a differential equation for this loop using KVL:
 \[
 12V - v_R(t) - v_L(t) = 0
 \]
-which using Ohms law and the $i$--$v$ characteristic of an inductor can be rewritten as 
+which using Ohms law and the $i$--$v$ characteristic of an inductor can be rewritten as
 \[
 12V -2i(t) - \frac{\partial i(t)}{\partial t} = 0
 \]
@@ -462,7 +447,7 @@ i(t) = \left[4e^{-2t} + 6\right]u(t)
 \caption{Circuit to accompany example 4}
 \label{fig: Example4}
 \end{figure}
- 
+
 \soln{6in}{
 \begin{figure} [h!]
 \centering
@@ -542,7 +527,7 @@ I have shown the derivation for an $RC$ circuit and will show and $RC$ example. 
 \caption{Circuit to accompany example 5}
 \label{fig: Example5}
 \end{figure}
- 
+
 \soln{6in}{
 \begin{figure} [h!]
 \centering
@@ -581,11 +566,11 @@ v_F(t) = a\cos (\omega t) +b \sin (\omega t)
 If we plug this {\em solution} back into the differential equation we get:
 \soln{3in}{
 \[
-RC\left[ -a\omega\sin(\omega t) + b\omega \cos(\omega t) \right] + a\cos (\omega t) +b \sin (\omega t) =V_A\cos (\omega t) 
+RC\left[ -a\omega\sin(\omega t) + b\omega \cos(\omega t) \right] + a\cos (\omega t) +b \sin (\omega t) =V_A\cos (\omega t)
 \]
 Grouping $\sin$ and $\cos$ terms we get
 \[
-\left[bRC\omega +a \right]\cos (\omega t) + \left[-aRC\omega +b\right] \sin (\omega t)=V_A\cos (\omega t) 
+\left[bRC\omega +a \right]\cos (\omega t) + \left[-aRC\omega +b\right] \sin (\omega t)=V_A\cos (\omega t)
 \]
 Therefore:
 \[
@@ -621,7 +606,7 @@ I have shown the derivation for an $RC$ circuit and will show and $RC$ example. 
 \caption{Circuit to accompany example 5}
 \label{fig: Example5}
 \end{figure}
- 
+
 \soln{6in}{
 \begin{figure} [h!]
 \centering
@@ -664,7 +649,7 @@ I have shown the derivation for an $RC$ circuit and will show and $RC$ example. 
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

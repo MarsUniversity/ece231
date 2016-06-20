@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 33:Filters I -- Transfer Functions}
 
 %\SetDueDate{1 Jan 2016}
@@ -12,13 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 7 due Lesson 37
-\item Quiz \# 6 Lesson 37
-\item GR \# 3 Lesson 38
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -30,13 +23,7 @@
 \begin{description}
 \item [Required]:
 Filters Handout (Available on Sharepoint), pgs 1-13
-\item [Optional]: 
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required problems]: 
-\item [Recommended textbook problems]: 1--1, 1--2, 1--3 (Handout)
+\item [Optional]:
 \end{description}
 
 \section{Introduction}
@@ -53,7 +40,7 @@ Since we have been looking at circuits with a single fixed frequency, our comple
  \]
  }
  The reason for this will hopefully be obvious later.
- 
+
  Let's look at a couple of impedances to convice ourselves that write any complex number in this form; this will help us later when we want to write transfer functions in standard form; \textbf{our standard form will always have $j$ and $\omega$ together and the coefficient on highest order of $j\omega$ will always be 1}.  Let $Z_L = R_L+j\omega L$ and $Z_C = R_C-\frac{j}{\omega C}$; write both of these impedances in the form $K[R+j\omega]$:
 
 \soln{4in}{
@@ -118,7 +105,7 @@ For the next several lessons we need to get in the habit of using semi-log plots
 \label{fig: MagResponse3}
 \end{figure}
 
-If you look closely you will see these plots contain the exact some information. 
+If you look closely you will see these plots contain the exact some information.
 \newpage
 \clearpage
 \pagebreak
@@ -264,7 +251,7 @@ Recall all of our lessons on Op Amps where we showed we could cascade gains.  Si
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

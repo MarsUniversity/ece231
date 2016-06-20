@@ -2,7 +2,7 @@
 
 % \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 13: Circuits with Dependent Sources}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
@@ -11,7 +11,6 @@
 
 \begin{document}
 \maketitle
-
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -30,11 +29,11 @@
 \section{Preliminary Definitions}
 
 \begin{description}
-\item[Active device] -- Any component that requires an external power supply to operate correctly. {\em Any device that has a gain greater than 1 is an active device}
-\item[Active circuit] -- Any circuit with at least one active device
-\item[Gain] -- The ratio of our output signal to our input signal (assumes input and output have the same dimensions)
-\item[Signal ampliflication] -- A gain greater than 1
-\item[Dependent source] -- A voltage or current source whose output is controlled by a voltage or current elsewhere in the circuit
+	\item[Active device] -- Any component that requires an external power supply to operate correctly. {\em Any device that has a gain greater than 1 is an active device}
+	\item[Active circuit] -- Any circuit with at least one active device
+	\item[Gain] -- The ratio of our output signal to our input signal (assumes input and output have the same dimensions)
+	\item[Signal ampliflication] -- A gain greater than 1
+	\item[Dependent source] -- A voltage or current source whose output is controlled by a voltage or current elsewhere in the circuit
 \end{description}
 
 \section{Types of dependent sources}
@@ -42,10 +41,10 @@ Since dependent sources can supply voltage or current and they are controlled by
 
 \soln{3in}{
 \begin{enumerate}
-\item Voltage Controlled Voltage Source (VCVS)
-\item Current Controlled Voltage Source (CCVS)
-\item Voltage Controlled Current Source (VCCS)
-\item Current Controlled Current Source (CCCS)
+	\item Voltage Controlled Voltage Source (VCVS)
+	\item Current Controlled Voltage Source (CCVS)
+	\item Voltage Controlled Current Source (VCCS)
+	\item Current Controlled Current Source (CCCS)
 \end{enumerate}
 }
 
@@ -199,20 +198,21 @@ For the circuit shown in Figure \ref{fig: Example2}, find $v_o$ in terms of $v_s
 \section{Nodal Analysis}
 Recall the steps for writing node voltage equations:
 \begin{enumerate}
-\item Identify a \textbf{reference node}.  You will not write an equation for this node, but the voltages at the other nodes will use this as a reference.
-\item Write \textbf{KCL equations} at the other $N-1$ nodes
-\item Write the currents in the KCL equations in terms of \textbf{node voltages} and resistances
-\item Rearrange the equations above into \textbf{standard form}
+	\item Identify a \textbf{reference node}.  You will not write an equation for this node, but the voltages at the other nodes will use this as a reference.
+	\item Write \textbf{KCL equations} at the other $N-1$ nodes
+	\item Write the currents in the KCL equations in terms of \textbf{node voltages} and resistances
+	\item Rearrange the equations above into \textbf{standard form}
 \end{enumerate}
 
 Also recall that adding a voltage source to the circuit added additional constraints and we had three methods for dealing with those constraints
 \begin{enumerate}
-\item Source transformation
-\item Smart choice of your reference node
-\item Define a {\em Supernode}
+	\item Source transformation
+	\item Smart choice of your reference node
+	\item Define a {\em Supernode}
 \end{enumerate}
 
 All these methods still apply to circuits with dependent sources.  We will demonstrate by example:
+
 
 %\textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3},
 %\begin{itemize}
@@ -227,33 +227,46 @@ All these methods still apply to circuits with dependent sources.  We will demon
 %\label{fig: Example3}
 %\end{figure}
 
-\soln{5in}{
-	Step 1. Assign nodes (A-D across top)
+% \soln{5in}{
+% 	Step 1. Assign nodes (A-D across top)
+%
+% 	Stop 2. Write KCL eqns and constant equations
+%
+% 	\begin{eqnarray}
+% 		V_A = 10 \\
+% 		\frac{V_B - V_A}{100k} + \frac{V_B}{150k} + \frac{V_B - (-50)}{R_F} = 0 & & \because V_B = V_x \\
+% 		V_c = -50 V_x = -50 V_B  \\
+% 		\frac{V_o}{2.2k} + \frac{V_o - V_c}{1k} = 0 & & \because V_D = V_o  \\
+% 	\end{eqnarray}
+%
+% 	Step 3. Now combine these eqns to get one composed of $V_o$ and $V_x$S
+%
+% 	\begin{eqnarray}
+% 		\frac{V_x - 10}{100k} + \frac{V_x}{150k} + \frac{V_x - (-50 V_x)}{R_F} = 0 \\
+% 		V_x \left( \frac{1}{100k} + \frac{V_x}{150k} + \frac{51}{R_F} \right) = \frac{10}{100k} \\
+% 		\frac{V_o}{2.2k} + \frac{V_o -(-50 V_x)}{2.2k} = 0 \\
+% 	\end{eqnarray}
+%
+% 	Step 4. Solve for $V_x$ in terms of $R_F$
+%
+% 	\begin{eqnarray}
+% 		V_x = \frac{10}{100k} \left( \frac{1}{100k} + \frac{1}{150k} + \frac{1}{R_F} = \frac{10}{100k} \left( \frac{300k R_F}{5 R_F + 15.3M} \right) \\
+% 		V_x = \frac{30 R_F}{5 R_F + 15.3 M} = \frac{6 R_F}{R_F + 3.06 k} \\
+% 	\end{eqnarray}
+% }
 
-	Stop 2. Write KCL eqns and constant equations
+% \textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3},
+% \begin{itemize}
+% \item Write Node Voltage equations
+% \item Write and expression for $v_o$ as a function of $R_F$
+% \end{itemize}
+% \begin{figure}[h! t! b!]
+% \centering
+% \includegraphics[width=0.5\textwidth]{Example3.jpg}
+% \caption{Circuit to accompany Example 3}
+% \label{fig: Example3}
+% \end{figure}
 
-	\begin{eqnarray}
-		V_A = 10 \\
-		\frac{V_B - V_A}{100k} + \frac{V_B}{150k} + \frac{V_B - (-50)}{R_F} = 0 & & \because V_B = V_x \\
-		V_c = -50 V_x = -50 V_B  \\
-		\frac{V_o}{2.2k} + \frac{V_o - V_c}{1k} = 0 & & \because V_D = V_o  \\
-	\end{eqnarray}
-
-	Step 3. Now combine these eqns to get one composed of $V_o$ and $V_x$S
-
-	\begin{eqnarray}
-		\frac{V_x - 10}{100k} + \frac{V_x}{150k} + \frac{V_x - (-50 V_x)}{R_F} = 0 \\
-		V_x \left( \frac{1}{100k} + \frac{V_x}{150k} + \frac{51}{R_F} \right) = \frac{10}{100k} \\
-		\frac{V_o}{2.2k} + \frac{V_o -(-50 V_x)}{2.2k} = 0 \\
-	\end{eqnarray}
-
-	Step 4. Solve for $V_x$ in terms of $R_F$
-
-	\begin{eqnarray}
-		V_x = \frac{10}{100k} \left( \frac{1}{100k} + \frac{1}{150k} + \frac{1}{R_F} = \frac{10}{100k} \left( \frac{300k R_F}{5 R_F + 15.3M} \right) \\
-		V_x = \frac{30 R_F}{5 R_F + 15.3 M} = \frac{6 R_F}{R_F + 3.06 k} \\
-	\end{eqnarray}
-}
 
 \soln{18in}{
 \begin{figure}[h! t! b!]

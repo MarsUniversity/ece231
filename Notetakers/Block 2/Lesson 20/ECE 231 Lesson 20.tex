@@ -1,6 +1,6 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
 \SetSemester{Spring 2016}
 \SetHandoutTitle{Lecture 20: Capacitors and Inductors}
@@ -12,14 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Problem Set \# 4 due Lesson 23
-\item Homwork \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz \# 4 Lesson 26
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -35,12 +27,6 @@
 \item  Textbook, section 6.1, 6.2, 6.4, pages 281--293; 301--305
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 6.24, 6.44, 6.51, 6.55--- Due Lesson 23
-\item [Recommended textbook problems]: None
 \end{description}
 
 \section{Capacitors}
@@ -152,7 +138,7 @@ p_c(t) = \frac{\partial}{\partial t}\left[\frac{1}{2}Cv_c^2(t)\right]
 
 Notice that the voltage across the capacitor and the time rate of change of the voltage can have like or opposite signs.  For example: $v_c = 5\ V$ and is decreasing would give opposite signs, while $v_c = 5\ V$ and is increasing would be like signs.
 
-\textbf{Why is this important?} -- 
+\textbf{Why is this important?} --
 
 \soln{2in}{
 Recall the power law.... A negative result in a power calculation tells us that the device is providing power while a positive result tells us a device is consuming power.  Capacitor power can be positive or negative... This means CAPACITORS CAN BOTH BE SOURCES AND SINKS FOR POWER.....  A capacitor can store energy!
@@ -162,14 +148,14 @@ Recall the power law.... A negative result in a power calculation tells us that 
 \clearpage
 \pagebreak
 
-\textbf{Example 2 -- Textbook Exercise 6-2(a) and 6-4 (a)} --- The voltage across a $10\ \mu F$ capacitor is 
+\textbf{Example 2 -- Textbook Exercise 6-2(a) and 6-4 (a)} --- The voltage across a $10\ \mu F$ capacitor is
 \begin{equation}
 v_c(t) = 25\sin(2000t)u(t)\ V
 \end{equation}
 
-Derive an expression for the current, $i_c(t)$ through the capacitor.  
+Derive an expression for the current, $i_c(t)$ through the capacitor.
 
-Also find the power for the capacitor.  
+Also find the power for the capacitor.
 
 Is the capacitor absorbing or delivering power at $t = 1\ s$?
 
@@ -310,7 +296,7 @@ p_L(t) = Li_L(t)\frac{\partial }{\partial t}i_L(t)=\frac{1}{2}L\frac{\partial}{\
 
 The current through the inductor $i_L(t)$ and its time derivative can have like or opposite signs; this means (like a capacitor) that an inductor can be a power source or power sink.  When an inductor is {\em sinking} power, it is storing energy that will be delivered back to the circuit at a later time.
 
-\textbf{Example 3 -- Textbook Excercise 6-6}--- For $t>0$, the voltage across the a $4\ mH$ inductor is $v_L(t) = 20e^{-2000t}$ \& $i_L(0) = 0$.  
+\textbf{Example 3 -- Textbook Excercise 6-6}--- For $t>0$, the voltage across the a $4\ mH$ inductor is $v_L(t) = 20e^{-2000t}$ \& $i_L(0) = 0$.
 
 Find:\\
 (a) The current through the inductor for $t>0$ \\
@@ -323,14 +309,14 @@ i_L(t) &=&i_L(0)+ \frac{1}{L}\int_0^t v_L(x)dx \nonumber \\
 i_L(t) &=&\frac{1}{4\times 10^{-3}}\int_0^t 20e^{-2000x}dx \nonumber \\
 i_L(t) &=&-\frac{1}{2000 \times 4\times 10^{-3}}\left[20e^{-2000x}\right]_0^t  \nonumber \\
 i_L(t) &=&2.5\left[1-e^{-2000t} \right] \ A \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 Power:
 \begin{eqnarray}
 p_L(t) &=& Li_L(t)\frac{\partial }{\partial t}i_L(t)\nonumber \\
 p_L(t) &=& 4\times10^{-3}\times2.5\left[1-e^{-2000t} \right]\frac{\partial }{\partial t}2.5\left[1-e^{-2000t} \right]\nonumber \\
 p_L(t) &=& 25\times 10^{-3}\left[1-e^{-2000t} \right]\left[2000e^{-2000t} \right]\nonumber \\
 p_L(t) &=& 50\left[e^{-2000t}-e^{-4000t} \right]\ W \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 }
 
 \newpage
@@ -352,7 +338,7 @@ v_L(t) &=& 100\times 10^{-3}\frac{\partial }{\partial t} \left[20e^{-2000t}-20e^
 v_L(t) &=& 2000\times 10^{-3} \left[-2000e^{-2000t}+4000e^{-4000t}\right] \nonumber \\
 v_L(t) &=& 4000 \left[2e^{-4000t}-e^{-2000t}\right] \ mV  \nonumber \\
 v_L(t) &=& 4 \left[2e^{-4000t}-e^{-2000t}\right] \ V  \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 
 Where does $v_L(t) =0$?
 \begin{eqnarray}
@@ -362,7 +348,7 @@ Where does $v_L(t) =0$?
 \ln 2 + \ln e^{-4000t} &=& \ln e^{-2000t}  \nonumber \\
 0.693 &=& 2000t  \nonumber \\
 t &=& 0.347\ ms \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 
 Inductor Power:
 \begin{eqnarray}
@@ -370,7 +356,7 @@ p_L(t) &=& v_L(t)i_L(t) \nonumber \\
 p_L(t) &=& 4 \left[2e^{-4000t}-e^{-2000t}\right]\times 20 \times 10^{-3}\left[e^{-2000t}-e^{-4000t}\right]\nonumber \\
 p_L(t) &=& 80\times 10^{-3} \left[3e^{-6000t}-2e^{-8000t}-e^{-4000t}\right]  \nonumber \\
 p_L(t) &=& -80e^{-4000t}+240e^{-6000t}-160e^{-8000t} \ mW \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 
 Absorbing or delivering?
 
@@ -378,11 +364,11 @@ We know from part (b) that hte zero crossing is at $t=0.347\ ms$.  Lets check th
 \begin{eqnarray}
 p_L(0.1\ ms) &=& -80e^{-4000 \times 0.0001}+240e^{-6000 \times 0.0001}-160e^{-8000 \times 0.0001} \ mW \nonumber\\
 p_L(0.1\ ms) &=&6.19 \ mW
-\end{eqnarray} 
+\end{eqnarray}
 \begin{eqnarray}
 p_L(0.5\ ms) &=& -80e^{-4000 \times 0.0005}+240e^{-6000 \times 0.0005}-160e^{-8000 \times 0.0005} \ mW \nonumber\\
 p_L(0.5\ ms) &=&-1.81 \ mW
-\end{eqnarray} 
+\end{eqnarray}
 
 Therefore (based on the passive sign convention) power is absorbed for $t<0.347\ ms$ and delivered for $t>0.347\ ms$
 }
@@ -524,7 +510,7 @@ SO THIS CIRCUIT IS A DIFFERENTIATOR!!!
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]

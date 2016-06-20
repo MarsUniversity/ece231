@@ -1,6 +1,6 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
 \SetSemester{Spring 2016}
 \SetHandoutTitle{Lecture 17: Operational Amplifiers - Part 4: Instrumentation Systems}
@@ -12,17 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#4 due TODAY
-\item Problem Set \#3 due next lesson
-\item Quiz \#3 during next lesson
-\item Problem Set \# 4 due Lesson 23
-\item HW \# 5 due Lesson 25
-\item Problem Set \# 5 due Lesson 25
-\item Quiz 4 Lesson 26
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -37,12 +26,6 @@
 \item  Textbook, section 4.6, pages 211--223
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 4.64, 4.65--- Due Lesson 23
-\item [Recommended textbook problems]: 4.63
 \end{description}
 
 \section{What is an Instrumentation System?}
@@ -74,7 +57,7 @@ Input transducers are broken into two categories:
 
 \subsection{Basic Instrumentation Systems}
 
-More often than not, the range (magnitude and bias) of the signal from the input transducer is not appropriate to connect directly to a circuit or output transducer.  This is where instrumentation systems come in handy; you will sometime hear an instrumentation system referred to as a transducer interface.  Figure \ref{fig: InstrumentationSystem} shows a block diagram of a basic instrumentation system; you may hear me sometimes refer to this as a {\em fishbone diagram}.  
+More often than not, the range (magnitude and bias) of the signal from the input transducer is not appropriate to connect directly to a circuit or output transducer.  This is where instrumentation systems come in handy; you will sometime hear an instrumentation system referred to as a transducer interface.  Figure \ref{fig: InstrumentationSystem} shows a block diagram of a basic instrumentation system; you may hear me sometimes refer to this as a {\em fishbone diagram}.
 
 \begin{figure} [h!]
 \centering
@@ -82,7 +65,7 @@ More often than not, the range (magnitude and bias) of the signal from the input
 \caption{Basic Instrumentation System Diagram}
 \label{fig: InstrumentationSystem}
 \end{figure}
-This system is shown broken into four parts:  
+This system is shown broken into four parts:
 \soln{4in}{
 \begin{description}
 \item[Physical Input] is the physical value that the transducer is measuring (pressure, temperature, sound, etc.)
@@ -109,14 +92,14 @@ The rudder control unit in an aircraft supplies a $-2.5\ mV$ signal when the pil
 \pagebreak
 
 \section{Building Instrumentation Systems with Op Amps}
-Now that we understand how to find the required gain and bias of an instrumentation system, we need to learn to build these systems.  to do this we rely on our old friend the Op Amp.  
+Now that we understand how to find the required gain and bias of an instrumentation system, we need to learn to build these systems.  to do this we rely on our old friend the Op Amp.
 
 \textbf{Example 2}
 
-In the way of a simple example, let's design an Op Amp circuit to implement the instrumentation system from example 1.  
+In the way of a simple example, let's design an Op Amp circuit to implement the instrumentation system from example 1.
 
 \soln{7in}{
-We can start by drawing a simplified block diagram: 
+We can start by drawing a simplified block diagram:
 \begin{figure} [h!]
 \centering
 \includegraphics[width=0.4\textwidth]{Example1BlockDiagram.jpg}
@@ -153,9 +136,9 @@ If we let $R_2 = 100\ k\Omega$ and $R_F = 100\ k\Omega$ we can calculate the oth
 R_1 = -\frac{R_2}{K_1}=-\frac{100\ k\Omega}{-150} = 667\ \Omega \nonumber \\
 R_A = -\frac{R_F}{K_2}=-\frac{100\ k\Omega}{-20} = 5\ k \Omega  \nonumber \\
 R_B = -\frac{R_F}{K_3}=-\frac{100\ k\Omega}{0.5} = 200\ k \Omega \nonumber
-\end{eqnarray} 
+\end{eqnarray}
 
-Note: You may consider buffering the inputs.  
+Note: You may consider buffering the inputs.
 }
 
 \newpage
@@ -210,7 +193,7 @@ We have a pressure sensor whose input-output relationship is shown in Figure \re
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h! t! b!]

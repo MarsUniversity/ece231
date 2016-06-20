@@ -2,7 +2,7 @@
 
 \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 15: Operational Amplifiers - Part 2
 }
 %\SetDueDate{1 Jan 2016}
@@ -12,13 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item HW \#4 due Lesson 17
-\item Problem Set \#3 due Lesson 18
-\item Quiz \#3 during Lesson 18
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -32,12 +25,6 @@
 \item  Textbook, section 4.4, pages 190--201
 \end{itemize}
 \item [Optional]: None
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required textbook problems]: 4.33, 4.34, 4.36--- Due Lesson 17
-\item [Recommended textbook problems]: 
 \end{description}
 
 \section{The Summing Amplifier}
@@ -72,7 +59,7 @@ Consider the circuit shown in Figure \ref{fig: InvertingSummer}
 \label{fig: InvertingSummer}
 \end{figure}
 
-The output voltage is still fully determined by the input current, $i_1$; but now $i_1$ is the {\em sum} of two currents, $i_A$ and $i_B$.  
+The output voltage is still fully determined by the input current, $i_1$; but now $i_1$ is the {\em sum} of two currents, $i_A$ and $i_B$.
 
 Let's derive a transfer characteristic of this amplifier circuit that relates $V_{out}$ to $V_A$ and $V_B$.
 
@@ -124,7 +111,7 @@ V_{out} = -(5V_A + 13 V_B)
 \end{equation}
 
 \soln{3in}{
-Looking back at the transfer characteristic for an inverting summer we know we need the resistances to satisfy the following relationships 
+Looking back at the transfer characteristic for an inverting summer we know we need the resistances to satisfy the following relationships
 \begin{equation}
 \frac{R_2}{R_A} = 5
 \end{equation}
@@ -140,7 +127,7 @@ K_2 = \frac{91\ k\Omega}{6.8\ k\Omega} = 13.3824
 \end{equation}
 }
 
-\textbf{Textbook Exercise 4-23}  
+\textbf{Textbook Exercise 4-23}
 
 (a) For the design above find $V_{out}$ if $V_A=2\ V$ and $V_B = -0.5\ V$
 
@@ -187,7 +174,7 @@ Rather than try to design a differential amplifier, I will give you the circuit 
 \label{fig: DifferentialAmplifierCircuit}
 \end{figure}
 
-The derivation below will take advantage of the {\em Superposition} principle. 
+The derivation below will take advantage of the {\em Superposition} principle.
 
 \newpage
 \clearpage
@@ -242,7 +229,7 @@ and since $i_1=-i_2$
 \begin{equation}
 i_2=V_2\frac{R_4}{(R_3+R_4)R_1}
 \end{equation}
-which means 
+which means
 \begin{equation}
 V_{out-2}=V_2\left\{\frac{R_4}{R_3+R_4}V_2 + \frac{R_4R_2}{(R_3+R_4)R_1}\right\} = V_2\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
 \end{equation}
@@ -273,7 +260,7 @@ K_2=\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
 \pagebreak
 
 \subsection{Examples}
-\textbf{Textbook Exercise 4-25} 
+\textbf{Textbook Exercise 4-25}
 
 (a) Find the transfer characteristic of a differential amplifier if: $R_1=10\ k\Omega$, $R_2=40\ k\Omega$, $R_3=10\ k\Omega$, and $R_4=15\ k\Omega$.
 
@@ -356,7 +343,7 @@ therefore
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h! t! b!]
