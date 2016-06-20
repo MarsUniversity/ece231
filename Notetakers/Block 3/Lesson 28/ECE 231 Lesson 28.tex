@@ -1,8 +1,8 @@
 \documentclass{handout}
 
-\SetInstructor{Lt Col James Phillips}
+% \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Spring 2016}
+\SetSemester{Fall 2016}
 \SetHandoutTitle{Lecture 28: Phasors and Impedance}
 
 %\SetDueDate{1 Jan 2016}
@@ -12,16 +12,6 @@
 
 \begin{document}
 \maketitle
-
-\textbf{Upcoming events}
-\begin{enumerate}
-\item Block 3 Skills Reveiw due today
-\item Problem Set \# 6 due Lesson 32
-\item Quiz \# 5 Lesson 32
-\item Problem Set \# 7 due Lesson 37
-\item Quiz \# 6 Lesson 37
-\item GR \# 3 Lesson 38
-\end{enumerate}
 
 \textbf{OBJECTIVES:}
 \begin{enumerate}
@@ -34,13 +24,7 @@
 \begin{description}
 \item [Required]:
 Textbook, section 8.1--8.2, pages 379--391
-\item [Optional]: 
-\end{description}
-
-\textbf{HOMEWORK}
-\begin{description}
-\item [Required problems]: 
-\item [Recommended textbook problems]: 8.3, 8.4, 8.13, 8.16 8.17
+\item [Optional]:
 \end{description}
 
 \section{Introduction}
@@ -50,11 +34,11 @@ Over the next several lessons, we will start looking at {\em Steady-state Sinuso
 To begin our look at phasors, we start with Euler's identity:
 \[
 e^{j\theta} = \cos \theta +j \sin \theta
-\]  
+\]
 This is just a complex number of the form $a+jb$ but with a magnitude of 1.  We can mulitply  Euler's equation by a constant to represent any complex number:
 \[
 Ae^{j\theta} =A \cos \theta +j A\sin \theta
-\]  
+\]
 From here we can recognize:
 \soln{1.5in}{
 \[
@@ -75,7 +59,7 @@ This relationship is shown graphically in Figure \ref{fig: PhasorDiagram}
 \label{fig: PhasorDiagram}
 \end{figure}
 
-We can take advantage of this relationship to simplify some of our calculations.  
+We can take advantage of this relationship to simplify some of our calculations.
 
 What happens if we apply the equations above to a more general sinusoid like $A\cos(\omega t + \phi)$?
 
@@ -91,9 +75,9 @@ If we supress the $\mathbf{Re}$ and let $\mathbf{A} = Ae^{j\phi}$ we can rewrite
 A\mathbf{Re}\left[e^{j\omega t}e^{j\phi}\right] = \mathbf{A} e^{j\omega t}
 \]
 
-}	
+}
 
-We call $\mathbf{A}$ the phasor representation of a  sinusoid.  Notice that the phasor carries information about the magnitude and phase of the sinusoid, but the frequency information is entirely supressed.  Also note that we could write $\mathbf{A}$ as 
+We call $\mathbf{A}$ the phasor representation of a  sinusoid.  Notice that the phasor carries information about the magnitude and phase of the sinusoid, but the frequency information is entirely supressed.  Also note that we could write $\mathbf{A}$ as
 \[
 \mathbf{A} = A\cos\phi+jA\sin\phi
 \]
@@ -323,7 +307,7 @@ I_c\angle \phi_I =  j\omega C V_c \angle \phi_V
 To make this look more like Ohm's law, lets solve for V:
 \soln{2in}{
 \[
-V_c \angle \phi_V = \frac{1}{j\omega C}I_c\angle \phi_I 
+V_c \angle \phi_V = \frac{1}{j\omega C}I_c\angle \phi_I
 \]
 
 Now for some mathemagic.... We know we can mulitply anything by 1 without changing the value.  We should also recognize that $-j^2 = 1$... If we mulitply $\frac{1}{j\omega C}$ by $-j^2$ we get:
@@ -409,15 +393,15 @@ Z_L = j\omega L
 Note: Impedances add just like resistances!
 
 \subsection{Frequency  and Impedance}
-From the equations above, it should be obvious that the impedance of a resistor is not affected by the fequency of the driving signal, however, the impedance of capacitors or inductors is affected.  To understand this effect, lets plot the impedance of a $1\ \mu F$ capacitor and a $500\ mH$ inductor: 
+From the equations above, it should be obvious that the impedance of a resistor is not affected by the fequency of the driving signal, however, the impedance of capacitors or inductors is affected.  To understand this effect, lets plot the impedance of a $1\ \mu F$ capacitor and a $500\ mH$ inductor:
 \soln{4in}{
 \begin{figure} [h!]
 \centering
 \includegraphics[width=1\textwidth]{ImpedanceVsFreq.jpg}
 \end{figure}
-} 
+}
 
-This is consistanct with what we know about capacitors and inductors for DC ($\omega =0$).  A capacitor is a open circuit ($Z=\infty$) and an inductor is a short ($Z=0$).  
+This is consistanct with what we know about capacitors and inductors for DC ($\omega =0$).  A capacitor is a open circuit ($Z=\infty$) and an inductor is a short ($Z=0$).
 \newpage
 \clearpage
 \pagebreak
@@ -474,7 +458,7 @@ Z = \frac{\mathbf{V}}{\mathbf{I}}= \frac{50}{4\angle(60^o)} = 12.5\angle 60^o = 
 %P_R &=& (100 \times 10^{-3}\ A)^2 \times 100\ \Omega \\
 %P_R &=& 10000 \times 10^{-6}\ A^2  \times 100\ \Omega \nonumber \\
 %P_R &=& 1\ W  \nonumber
-%\end{eqnarray} 
+%\end{eqnarray}
 
 % Figure Example Code
 %\begin{figure} [h!]
