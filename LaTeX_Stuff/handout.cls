@@ -70,11 +70,12 @@
 	\newcommand{\SetSemester}[1]{\renewcommand{\Semester}{#1}}
 	\newcommand{\ShowAllBlanks}{\renewcommand{\Blank}{\large Name:\rule{2in}%
 	{0.5pt} Section:\rule{0.75in}{0.5pt} Date:\rule{0.75in}{0.5pt}\\}}
-	
+
 	% redefine the make title command
 	\renewcommand\maketitle{
 		\thispagestyle{handouttitle}
 		\begin{center}
+		 \includegraphics[width=5cm]{DFEC-logo.png} \\
 		\LARGE{\HandoutTitle} \\
 		\large\textbf{\DueDate} \\
 		\end{center}
@@ -83,6 +84,7 @@
 	\newcommand{\maketitleinst}{
 		\thispagestyle{handouttitle}
 		\begin{center}
+		 \includegraphics[width=3cm]{2006-DFEC-logo.png} \\
 		\LARGE{\HandoutTitle} \\
 		\large{\Instructor} \\
 		\end{center}
@@ -98,7 +100,7 @@
 	\renewcommand\subsubsection{\@startsection
 		{subsubsection}{2}{0mm}{0.1\baselineskip}{0.1\baselineskip}{\normalfont\normalsize\textbf}
 	}
-	
+
 	% Create a question environment
 	\newcounter{questionnumber}
 	\newenvironment{questions}
@@ -108,12 +110,12 @@
 		{	\setcounter{questionnumber}{\theenumi}
 			\end{enumerate}
 		}
-	
+
 	% Create a solution environment and code to toggle showing and hiding solutions.
 	\ifthenelse{\NOT\isundefined{\makesolution}}{\setboolean{@showsolns}{true}}{}
-	
+
 	\ifthenelse{\boolean{@showsolns}}{}{\setboolean{@showsolns}{false}} % if the solution option was not passed don't set default to not display solutions.
-	
+
 	% The color to display the solution and solution stamps in.
 	\newcommand{\solncolor}{blue}
 	% The command to change the color for the solutions.
@@ -121,9 +123,9 @@
 
 	% The solution environment.
 	\newenvironment{solution}{\color{\solncolor} \em }{}
-	
+
 	% \showsoln displays the solutions for the document.
-	\newcommand{\showsoln}{\setboolean{@showsolns}{true} \pagestyle{handout}} 
+	\newcommand{\showsoln}{\setboolean{@showsolns}{true} \pagestyle{handout}}
 	% \hidesoln hides the solutions for the document.
 	\newcommand{\hidesoln}{\setboolean{@showsolns}{false}}
 	% This is the solution stamp put at the top and bottom of each page.
@@ -152,15 +154,15 @@
 		\cfoot{\thepage\ of \pageref{LastPage}}
 		\ifthenelse{\boolean{@showsolns}}
 			{
-			\lhead{ \solnstamp \\ \large \CourseTitle }			
+			\lhead{ \solnstamp \\ \large \CourseTitle }
 			\lfoot{\solnstamp}
 			}
 			{
-			\lhead{ \large \CourseTitle }	
+			\lhead{ \large \CourseTitle }
 			\lfoot{}
 			}
-		\rhead{\Blank \large \Semester}
-		
+		\rhead{ \large \Semester}
+
 	}
 
 	% The style for pages without \maketitle called on it.
@@ -176,13 +178,13 @@
 			\lhead{}
 			}
 			{
-			\chead{ \large \CourseTitle\  - \Semester \\ \textbf{\large \HandoutTitle}\ }
+			\chead{ \large \CourseTitle\  - \Semester \\  \textbf{\large \HandoutTitle}\ }
 			\lfoot{}
 			\rhead{}
 			\lhead{}
 			}
 	}
-	
+
 % Set the default page style to handout.
 	\pagestyle{handout}
 

@@ -48,7 +48,6 @@ Temporary Items
 .apdisk
 
 # kevin - latex files
-*.pdf
 *.aux
 *.fls
 *.log

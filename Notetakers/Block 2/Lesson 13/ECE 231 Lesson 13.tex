@@ -2,7 +2,7 @@
 
 % \SetInstructor{Lt Col James Phillips}
 \SetCourseTitle{ECE231: Electrical Circuits and Systems I}
-\SetSemester{Fall 2016}
+\SetSemester{Block II}
 \SetHandoutTitle{Lecture 13: Circuits with Dependent Sources}
 %\SetDueDate{1 Jan 2016}
 %\ShowAllBlanks
@@ -214,46 +214,46 @@ Also recall that adding a voltage source to the circuit added additional constra
 All these methods still apply to circuits with dependent sources.  We will demonstrate by example:
 
 
-%\textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3},
-%\begin{itemize}
-%\item Write Node Voltage equations
-%\item Write and expression for $v_o$ as a function of $R_F$
-%\end{itemize}
+\textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3},
+\begin{itemize}
+\item Write Node Voltage equations
+\item Write and expression for $v_o$ as a function of $R_F$
+\end{itemize}
 
-%\begin{figure}[h! t! b!]
-%\centering
-%\includegraphics[width=0.5\textwidth]{Example3.jpg}
-%\caption{Circuit to accompany Example 3}
-%\label{fig: Example3}
-%\end{figure}
+\begin{figure}[h! t! b!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Example3.jpg}
+	\caption{Circuit to accompany Example 3}
+	\label{fig: Example3}
+\end{figure}
 
-% \soln{5in}{
-% 	Step 1. Assign nodes (A-D across top)
-%
-% 	Stop 2. Write KCL eqns and constant equations
-%
-% 	\begin{eqnarray}
-% 		V_A = 10 \\
-% 		\frac{V_B - V_A}{100k} + \frac{V_B}{150k} + \frac{V_B - (-50)}{R_F} = 0 & & \because V_B = V_x \\
-% 		V_c = -50 V_x = -50 V_B  \\
-% 		\frac{V_o}{2.2k} + \frac{V_o - V_c}{1k} = 0 & & \because V_D = V_o  \\
-% 	\end{eqnarray}
-%
-% 	Step 3. Now combine these eqns to get one composed of $V_o$ and $V_x$S
-%
-% 	\begin{eqnarray}
-% 		\frac{V_x - 10}{100k} + \frac{V_x}{150k} + \frac{V_x - (-50 V_x)}{R_F} = 0 \\
-% 		V_x \left( \frac{1}{100k} + \frac{V_x}{150k} + \frac{51}{R_F} \right) = \frac{10}{100k} \\
-% 		\frac{V_o}{2.2k} + \frac{V_o -(-50 V_x)}{2.2k} = 0 \\
-% 	\end{eqnarray}
-%
-% 	Step 4. Solve for $V_x$ in terms of $R_F$
-%
-% 	\begin{eqnarray}
-% 		V_x = \frac{10}{100k} \left( \frac{1}{100k} + \frac{1}{150k} + \frac{1}{R_F} = \frac{10}{100k} \left( \frac{300k R_F}{5 R_F + 15.3M} \right) \\
-% 		V_x = \frac{30 R_F}{5 R_F + 15.3 M} = \frac{6 R_F}{R_F + 3.06 k} \\
-% 	\end{eqnarray}
-% }
+\soln{5in}{
+	Step 1. Assign nodes (A-D across top)
+
+	Stop 2. Write KCL eqns and constant equations
+
+	\begin{eqnarray}
+		V_A = 10 \\
+		\frac{V_B - V_A}{100k} + \frac{V_B}{150k} + \frac{V_B - (-50)}{R_F} = 0 & & \because V_B = V_x \\
+		V_c = -50 V_x = -50 V_B  \\
+		\frac{V_o}{2.2k} + \frac{V_o - V_c}{1k} = 0 & & \because V_D = V_o
+	\end{eqnarray}
+
+	Step 3. Now combine these eqns to get one composed of $V_o$ and $V_x$S
+
+	\begin{eqnarray}
+		\frac{V_x - 10}{100k} + \frac{V_x}{150k} + \frac{V_x - (-50 V_x)}{R_F} = 0 \\
+		V_x ( \frac{1}{100k} + \frac{V_x}{150k} + \frac{51}{R_F} ) = \frac{10}{100k} \\
+		\frac{V_o}{2.2k} + \frac{V_o -(-50 V_x)}{2.2k} = 0
+	\end{eqnarray}
+
+	Step 4. Solve for $V_x$ in terms of $R_F$
+
+	\begin{eqnarray}
+		V_x = \frac{10}{100k} \left( \frac{1}{100k} + \frac{1}{150k} + \frac{1}{R_F} \right) = \frac{10}{100k} \left( \frac{300k R_F}{5 R_F + 15.3M} \right) \\
+		V_x = \frac{30 R_F}{5 R_F + 15.3 M} = \frac{6 R_F}{R_F + 3.06 k}
+	\end{eqnarray}
+}
 
 % \textbf{Example 3} -- For the circuit shown in Figure \ref{fig: Example3},
 % \begin{itemize}
@@ -268,34 +268,34 @@ All these methods still apply to circuits with dependent sources.  We will demon
 % \end{figure}
 
 
-\soln{18in}{
-\begin{figure}[h! t! b!]
-\centering
-\includegraphics[width=0.7\textwidth]{Example3solnA.jpg}
-\end{figure}
-
-\newpage
-\clearpage
-\pagebreak
-
-\begin{figure}[h! t! b!]
-\centering
-\includegraphics[width=0.9\textwidth]{Example3solnB.jpg}
-\end{figure}
-
-\newpage
-\clearpage
-\pagebreak
-
-\begin{figure}[h! t! b!]
-\centering
-\includegraphics[width=0.9\textwidth]{Example3solnC.jpg}
-\end{figure}
-
-}
-\newpage
-\clearpage
-\pagebreak
+% \soln{18in}{
+% \begin{figure}[h! t! b!]
+% \centering
+% \includegraphics[width=0.7\textwidth]{Example3solnA.jpg}
+% \end{figure}
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \begin{figure}[h! t! b!]
+% \centering
+% \includegraphics[width=0.9\textwidth]{Example3solnB.jpg}
+% \end{figure}
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \begin{figure}[h! t! b!]
+% \centering
+% \includegraphics[width=0.9\textwidth]{Example3solnC.jpg}
+% \end{figure}
+%
+% }
+% \newpage
+% \clearpage
+% \pagebreak
 
 \textbf{Example 4 -- Textbook Exercise 4-2}
 For the Circuit shown in Figure \ref{fig: Example4}, write an expression for the gain ($K=\frac{v_O}{v_S}$) in terms of $R_F$ then find values for $R_F$ such that $50<|K|<10,000$ (given that $\mu=10^5$).
@@ -312,18 +312,18 @@ For the Circuit shown in Figure \ref{fig: Example4}, write an expression for the
 \includegraphics[width=0.8\textwidth]{Example4solnA.jpg}
 \end{figure}
 
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
 
 \begin{figure}[h! t! b!]
 \centering
 \includegraphics[width=0.9\textwidth]{Example4solnB.jpg}
 \end{figure}
 
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
 
 \begin{figure}[h! t! b!]
 \centering
@@ -332,9 +332,9 @@ For the Circuit shown in Figure \ref{fig: Example4}, write an expression for the
 
 }
 
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
 
 \section{Mesh Analysis}
 Recall the steps for writing Mesh Current equations:
@@ -355,9 +355,9 @@ Futhermore, recall the 3 methods for dealing with current sources
 
 All these methods can be used when dealing with cicuits with dependent sources.  We will demonstrate with examples:
 
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
 
 \textbf{Example 5 -- Textbook Exercise 4-8}
 Use mesh analysis to find the current $i_O$ in Figure \ref{fig: Example5}.
@@ -375,9 +375,9 @@ Use mesh analysis to find the current $i_O$ in Figure \ref{fig: Example5}.
 \end{figure}
 }
 
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
 
 \textbf{Example 6 -- Textbook Exercise 4-9}
 Use mesh analysis to find the current $i_O$ in Figure \ref{fig: Example6}.
@@ -395,37 +395,37 @@ Use mesh analysis to find the current $i_O$ in Figure \ref{fig: Example6}.
 \end{figure}
 }
 
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
-
-\newpage
-\clearpage
-\pagebreak
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
+%
+% \newpage
+% \clearpage
+% \pagebreak
 
 \end{document}
 
