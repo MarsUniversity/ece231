@@ -14,7 +14,7 @@ Make sure `cmake` can find `latex`
 
 If you update `mactex` make sure to change the link if the year changes.
 
-To help stay up todate with template changes:
+To help stay up todate with template changes, create these links in `~/Library/texmf/tex/latex/common`:
 
 	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/handout.cls handout.cls
 	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/DFEC-logo.png
@@ -35,18 +35,19 @@ the output PDF diectory.
 Other useful `make` commands:
 
 | Commands        | Description   |
-| --------------- |:-------------:|
+| --------------- |:--------------|
 | cmake nuke      | deletes everything in the build directory ... Nuke the site from orbit. It's the only way to be sure. |
 | cmake clean-pdf | deletes pdfs in output directory |
 | cmake clean     | deletes some latex artifact files from the build directory |
 | cmake copy      | copies pdfs to an output directory |
 
-Since `cmake` copies everything into the build directory, you can safely delete
+Since `cmake` copies everything into the `build` directory, you can safely delete
 it.
-
 
 ## Misc
 
 To remove spaces from file names:
 
     for f in **/*; do mv -n "$f" `echo "$f" | sed -e 's/ /_/g'`; done
+
+Unfortunately this doesn't work recursively all the way down, just down one level.
