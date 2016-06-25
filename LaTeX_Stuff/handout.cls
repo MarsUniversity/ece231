@@ -1,7 +1,11 @@
 % ------
-% This is a handout document class. It is based on the article class. It is design for creating handouts for a college class
+% This is a handout document class. It is based on the article class. It is
+% design for creating handouts for a college class
 % Created By: Roger Cortesi, 27 JUN 2007
 % ----
+% Modified by: Kevin Walchko, 1 June 2016
+% Changes:
+%   - added ECE logo to
 % ---- Identification -----
 
 \NeedsTeXFormat{LaTeX2e}
@@ -81,14 +85,14 @@
 		\end{center}
 	}
 
-	\newcommand{\maketitleinst}{
-		\thispagestyle{handouttitle}
-		\begin{center}
-		 \includegraphics[width=3cm]{2006-DFEC-logo.png} \\
-		\LARGE{\HandoutTitle} \\
-		\large{\Instructor} \\
-		\end{center}
-	}
+	% \newcommand{\maketitleinst}{
+	% 	\thispagestyle{handouttitle}
+	% 	\begin{center}
+	% 	 \includegraphics[width=3cm]{DFEC-logo.png} \\
+	% 	\LARGE{\HandoutTitle} \\
+	% 	\large{\Instructor} \\
+	% 	\end{center}
+	% }
 
 	% Redefine the sectioning commands \section \subsection and \subsubsection
 	\renewcommand\section{\@startsection

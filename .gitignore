@@ -55,3 +55,6 @@ Temporary Items
 *.vsdx
 *.gz
 *(busy)
+build
+old
+tmp
