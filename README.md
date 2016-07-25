@@ -2,6 +2,8 @@
 
 Original Author: Lt Col James Phillips, PhD
 
+**this is still a work in progress**
+
 ## Setup OSX
 
 Install `latex`:
@@ -18,6 +20,22 @@ To help stay up todate with template changes, create these links in `~/Library/t
 
 	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/handout.cls handout.cls
 	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/DFEC-logo.png
+
+
+## Setup Windows
+
+1. Install `latex` from http://www.tug.org/downloads (install-tl-window.exe) which
+is a Windows installation package:
+
+2. Install `cmake` from https://cmake.org/download.
+
+3. Install ImageMagick from http://www.imagemagick.org/script/binary-releases.php.
+I used the portable version x64 (near bottom of page) and put it in my Documents
+folder. Then added it to the path:
+
+	export IMAGEMAGICK_CONVERT=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64
+	export PATH=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64:$PATH
+
 
 ## Build
 
