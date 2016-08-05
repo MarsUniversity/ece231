@@ -33,8 +33,8 @@ is a Windows installation package:
 I used the portable version x64 (near bottom of page) and put it in my Documents
 folder. Then added it to the path:
 
-	export IMAGEMAGICK_CONVERT=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64
-	export PATH=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64:$PATH
+		export IMAGEMAGICK_CONVERT=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64
+		export PATH=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64:$PATH
 
 
 ## Build
