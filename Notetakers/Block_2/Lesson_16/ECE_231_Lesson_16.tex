@@ -114,7 +114,7 @@ One way to eliminate input loading is by using a buffer amplifier; see Figure \r
 This is one of those topics that is best explained just by working examples. Note that because these are design problems, the solutions are not unique; there may be many designs that satisfy the requirements.
 
 \subsection{Example 1 - Cascading}
-Design a circuit that gives a gain of 100,000, where the gain of each stage cannot excede 1,000.
+Design a circuit that gives a gain of 100,000, where the gain of each stage cannot exceed 1,000. Op amps in series are referred to as cascading.
 
 \soln{2.5in}{
 To start our design, lets do a quick block diagram:
@@ -145,7 +145,7 @@ For stage 1 let's select $R_2 = 1\ k\Omega$ and solve for $R_1$ (recall for a no
 \begin{equation}
 R_1 = R_2K_1-R_2 = 1\ k\Omega \times 500 - 1\ k\Omega = 499\ k\Omega
 \end{equation}
-The closest standard resistance value to $499\ k\Omega$ is $470\ k\Omega$ which give an actual gain of
+The closest standard resistance value to $499\ k\Omega$ is $470\ k\Omega$. Resistors are typically available in decade multiples like: 1, 10, 100, 500, 1k, 1.3k, etc. This give an actual gain of
 \begin{equation}
 K_1=\frac{R_1+R_2}{R_2}=\frac{470\ k\Omega+1\ k\Omega}{1\ k\Omega}=471
 \end{equation}
@@ -236,7 +236,7 @@ Since there is no current flowing into the buffer, there is no voltage drop acro
 }
 
 \subsection{Example 2}
-Design an Op Amp circuit that implments the block diagram shown in Figure \ref{fig: Example2}
+Design an Op Amp circuit that implements the block diagram shown in Figure \ref{fig: Example2}
 \begin{figure} [h!]
 \centering
 \includegraphics[width=0.5\textwidth]{Example2.jpg}
@@ -244,16 +244,16 @@ Design an Op Amp circuit that implments the block diagram shown in Figure \ref{f
 \label{fig: Example2}
 \end{figure}
 
-Designs are nout unique.... We will do three designs that work in this example
+Designs are not unique.... We will do three designs that work in this example
 
 \soln{3in}{
-Start by writing an equation for the transfer characterisitic
+Start by writing an equation for the transfer characteristic
 \begin{equation}
 V_{out} = 5(-10V_1-4V_2+1\ V)
 \end{equation}
 or
 \begin{equation}
-V_{out} = -50V_1-20V_2+5\ V)
+V_{out} = -50V_1-20V_2+5\ V
 \end{equation}
 }
 

@@ -28,7 +28,7 @@
 \end{description}
 
 \section{The Summing Amplifier}
-Often in circuit design, we will need to add to signals together -- this CANNOT be down by simply connecting two wires, although many of you in your solutions will try that method.  To add two signals we must use a device called an {\em adder} or {\em summing amplifier}.   In this section we will design a weighted (and inverting) summing amplifier.
+Often in circuit design, we will need to add to signals together -- this CANNOT be done by simply connecting two wires, although many of you in your solutions will try that method.  To add two signals we must use a device called an {\em adder} or {\em summing amplifier}.   In this section we will design a weighted (and inverting) summing amplifier.
 
 \subsection{Derivation}
 Let's start by looking at the inverting Op Amp discussed in last class (see Figure \ref{fig: InvertingOpAmp})
@@ -72,19 +72,17 @@ but we know $i_n=0$ so
 \begin{equation}
 i_A + i_B = i_2
 \end{equation}
-Since we also know that $v_n=0$ we can write $i_A$ and $i_B$ interms of $V_A$ and $V_B$
+Since we also know that $v_n=0$ we can write $i_A$ and $i_B$ interms of $V_A$ and $V_B$ and $V_B = 0 = V_n$
 \begin{equation}
-\frac{V_A}{R_A} + \frac{V_B}{R_B} = i_2
+	\frac{V_A - V_n}{R_A} + \frac{V_B - V_n}{R_B} = \frac{V_A}{R_A} + \frac{V_B}{R_B} = i_2
 \end{equation}
-We recall from last lesson that
+simplifying
 \begin{equation}
-V_{out}=-i_2R_2
+	\frac{V_A}{R_A} + \frac{V_B}{R_B} = \frac{-V_{out}}{R_2}
 \end{equation}
-whic combining the last 2 equations gives
-\begin{equation}
-\frac{V_A}{R_A} + \frac{V_B}{R_B} = \frac{-V_{out}}{R_2}
-\end{equation}
+
 which solving for $V_{out}$ gives
+
 \begin{equation}
 V_{out}=-\left(\frac{R_2}{R_A}V_A + \frac{R_2}{R_B}V_B \right)
 \end{equation}
@@ -215,44 +213,57 @@ Continuing the derivation we now {\em turn off} $V_1$.  The cicuit would now loo
 
 We now can find the voltage at the non-inverting terminal, $v_p$ using voltage division
 \begin{equation}
-v_p = \frac{R_4}{R_3+R_4}V_2
+	v_p = \frac{R_4}{R_3+R_4}V_2
 \end{equation}
 and we know that $v_p = v_n$ therefore
 \begin{equation}
-v_n = \frac{R_4}{R_3+R_4}V_2
+	v_n = \frac{R_4}{R_3+R_4}V_2
 \end{equation}
-From here we can solve for $i_1$
-\begin{equation}
-i_1=-V_2\frac{R_4}{(R_3+R_4)R_1}
-\end{equation}
-and since $i_1=-i_2$
-\begin{equation}
-i_2=V_2\frac{R_4}{(R_3+R_4)R_1}
-\end{equation}
-which means
-\begin{equation}
-V_{out-2}=V_2\left\{\frac{R_4}{R_3+R_4}V_2 + \frac{R_4R_2}{(R_3+R_4)R_1}\right\} = V_2\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
-\end{equation}
+
+% From here we can solve for $i_1$
+%
+% \begin{equation}
+% 	i_1=-V_2\frac{R_4}{(R_3+R_4)R_1}
+% \end{equation}
+%
+% and since $i_1=-i_2$
+%
+% \begin{equation}
+% 	i_2=V_2\frac{R_4}{(R_3+R_4)R_1}
+% \end{equation}
+%
+% which means
+%
+% \begin{equation}
+% 	V_{out-2}=V_2\left\{\frac{R_4}{R_3+R_4}V_2 + \frac{R_4R_2}{(R_3+R_4)R_1}\right\} = V_2\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
+% \end{equation}
+
+Now do a voltage divider
+
+\begin{eqnarray}
+	V_{out-2} = \frac{R_1 + R_2}{R_1} V_n \\
+	V_{out-2} = \frac{R_1 + R_2}{R_1} \frac{R_4}{R_3+R_4} V_2 \\
+\end{eqnarray}
 
 }
 
 Now that we have the output from $V_1$ and $V_2$ we can add them
 
 \soln{3in}{
-\begin{equation}
-V_{out} = V_{out-1}+V_{out-2}
-\end{equation}
-\begin{equation}
-V_{out} = -\frac{R_2}{R_1}V_1+\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]V_2
-\end{equation}
-so referring back to the block diagram,
-\begin{equation}
-K_1=\frac{R_2}{R_1}
-\end{equation}
+\begin{eqnarray}
+	V_{out} = V_{out-1}+V_{out-2} = K_1 V_{out-1} + K_2 V_{out-2}\\
+	V_{out} = -\frac{R_2}{R_1}V_1+\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]V_2
+\end{eqnarray}
+
+so referring back to the block diagram
+
+\begin{eqnarray}
+	K_1=\frac{R_2}{R_1} \\
+	K_2=\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
+\end{eqnarray}
+
 Note: We dropped the negatives sign because it is accounted for in the block diagram at the summing junction
-\begin{equation}
-K_2=\left[\frac{R_4}{R_3+R_4}\right]\left[\frac{R_1+R_2}{R_1}\right]
-\end{equation}
+
 }
 
 \newpage

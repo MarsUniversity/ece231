@@ -32,12 +32,19 @@
 \subsection{The very basics}
 \soln{2in}{
 \begin{enumerate}
-\item An Op Amp is an active device
-\item Because it is an active device it has an external power supply
-\item Op Amps are 5-terminal devices: 2 inputs, 2 power supplies and 1 output
-\item OpAmps have very high gain
+	\item An Op Amp is an active device
+	\item Because it is an active device it has an external power supply
+	\item Op Amps are 5-terminal devices: 2 inputs, 2 power supplies and 1 output
+	\item OpAmps have very high gain. Theoretically, an open loop gain is $\infty$ but typical real values are 20k - 200k.
 \end{enumerate}
 }
+
+\subsection{Voltage Gain}
+
+\begin{eqnarray}
+	\text{voltage gain} = \frac{V_{out}}{V_{in}} = A \\
+	20 \log(A) = 20 \log(\frac{V_{out}}{V_{in}})
+\end{eqnarray}
 
 \newpage
 \clearpage
@@ -85,7 +92,7 @@ Op Amps have two operations regions:
 \end{description}
 
 \subsection{The ideal Op Amp}
-Four our purposes we are going to always assume {\em Ideal Operational Amplifiers} in our calculation; so we need to give some operationg characteristics of an ideal Op Amp.
+Four our purposes we are going to always assume {\em Ideal Operational Amplifiers} in our calculation; so we need to give some operating characteristics of an ideal Op Amp.
 
 \begin{figure} [h! t! b!]
 \centering
@@ -105,11 +112,14 @@ Characteristics of ideal Op Amps (reference Figure \ref{fig: IdealOpAmp}):
 \end{enumerate}
 }
 
-We will take advantage of these assumptions in the next few sections to develop some common Op Amp circuits; specifically the inverting  and non-inverting amplifiers.  Next lesson we will develop circutis for Summing and Subtracting amplifiers.
+We will take advantage of these assumptions in the next few sections to develop some common Op Amp circuits:
 
-\newpage
-\clearpage
-\pagebreak
+\begin{enumerate}
+	\item Non-inverting Op Amp (this lesson)
+	\item Inverting Op Amp (this lesson)
+	\item Adder (next lesson)
+	\item Differential Amplifier (next lesson)
+\end{enumerate}
 
 \section{Non-Inverting Op Amps}
 Figure \ref{fig: NonInvertingOpAmp} shows a schematic for a non-inverting amplifier circuit.  In each of the circuits we analyze moving forward it is important to note a couple of things:
@@ -169,14 +179,14 @@ We can know write an expression for $V_{out}$ by recognizing that
 \begin{equation}
 V_{out} = V_{R1} + V_{R2}
 \end{equation}
-which equals (I will leave the algebra to you)
+which equals (voltage divider rearranged)
 \begin{equation}
 V_{out} = V_{in}\frac{R1+R2}{R2}
 \end{equation}
 }
 This yields a gain of the non-inverting amplifier of
 \begin{equation}
-K=\frac{R_1+R_2}{R_2}
+K=\frac{R_1+R_2}{R_2}=\frac{V_o}{V_i}
 \end{equation}
 
 \subsection{Examples}
@@ -276,7 +286,7 @@ i_2 = \frac{-V_{out}}{R_2}
 \end{equation}
 }
 
-\textbf{Step 3:} Since step 1 told us that $i_1=i_2$, set the expressions from step to equal to one another and solve for $K=\frac{V_{out}}{V_{in}}$
+\textbf{Step 3:} Since step 1 told us that $i_1=i_2$, set the expressions from step 2 equal to one another and solve for $K=\frac{V_{out}}{V_{in}}$
 
 \soln{2in}{
 \begin{equation}
@@ -284,7 +294,7 @@ i_2 = \frac{-V_{out}}{R_2}
 \end{equation}
 solving for $\frac{V_{out}}{V_{in}}$ gives
 \begin{equation}
-\frac{V_{out}}{V_{in}}=\frac{-R_2}{R_1}
+\frac{V_{out}}{V_{in}}=\frac{-R_2}{R_1}=K
 \end{equation}
 }
 
@@ -366,6 +376,22 @@ which yields a $V_{out} = 80\ V$
 Notice the effects of {\em loading} on an inverting amplifier.
 
 }
+
+
+\subsection{Summary}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		Type & K & Account for input loading \\
+		\hline \hline
+		Non-inverting & $\frac{R_1+R_2}{R_2}$ & No \\
+		Inverting     & $\frac{-R_2}{R_1}$    & Yes \\
+		\hline
+	\end{tabular}
+	\caption{Op Amp Characteristics}
+	% \label{tab: Eng Prefixes}
+\end{table}
 
 
 \newpage

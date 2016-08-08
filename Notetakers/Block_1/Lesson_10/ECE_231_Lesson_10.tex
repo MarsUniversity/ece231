@@ -28,7 +28,7 @@
 \end{description}
 
 
-\section{Maximum Power Transfer}
+\section{Maximum Power Transfer (p. 120)}
 As discussed in last lesson, an interface is a connection between two circuits where a signal level can be observed, measured or specified.  But what is the maximum signal level that can be transfered across an interface?  That is what we will explore this lesson.  For the purposes of this discussion, we will only consider examples where both the source circuit and the load circuit are linear resistive circuits; see Figure \ref{fig: Source_Load}.
 \begin{figure} [h t b]
 \centering
@@ -54,7 +54,8 @@ Assume in this discussion that we cannot control $R_T$.  This entire discussion 
 Start by writing an equation for the voltage across the load resistor:
 \soln{1in}{
 \begin{equation}
-v_{Load}=\frac{R_L}{R_L+R_T}V_T
+	V_T = i_{load}(R_L + R_T) \\
+	i_{Load}=\frac{R_L}{R_L+R_T}V_T
 \end{equation}
 
 You should be able to easily recognize that $v_{Load}$ gets larger as $R_L$ gets larger; if $R_L=\infty$ then $v_{Load}=V_T$ which is the max value it can take on.
@@ -123,7 +124,7 @@ R_L=R_T
 
 }
 
-\textbf{Now found the value for $R_T$ that give max power, what is the maximum power delivered?}
+\textbf{Now find the value for $R_T$ that gives max power, what is the maximum power delivered?}
 \soln{2in}{
 Plug $R_L=R_T$ into the power equation and solve to get
 \begin{eqnarray}
@@ -132,7 +133,7 @@ P_{MAX}=\frac{V_T^2}{4R_T}=\frac{V_T i_N}{4}=\frac{i_N^2 R_T}{4}
 \end{eqnarray}
 }
 
-Note, $P_{MAX}$ does not imply maximum efficiency too (see book p. 117 for more details).
+Note, $P_{MAX}$ does not imply maximum efficiency too (see book p. 120 for more details).
 
 \section{Examples}
 \subsection{Example 1 - Textbook Exercise 3-33}
