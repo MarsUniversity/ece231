@@ -1,5 +1,12 @@
 # ECE 231
 
+**ECE 231.** Electrical Circuits and Systems I. 3(1). An introduction to circuit analysis and
+system design. Topics include circuit models of electrical devices and systems, nodal and mesh
+analysis, Thévenin and Norton equivalent circuits, dependent sources, operational amplifier
+circuits, transient, sinusoidal, steady-state, and frequency response of first-order circuits (solution
+of linear, first-order, constant coefficient, ordinary differential equations), and military and
+civilian applications. Lab. Final exam. Prereq: Math 142. Sem hrs: 3 fall or spring. 
+
 Original Author: Lt Col James Phillips, PhD
 
 **this is still a work in progress**
