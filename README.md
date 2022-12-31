@@ -5,7 +5,7 @@ system design. Topics include circuit models of electrical devices and systems, 
 analysis, Thévenin and Norton equivalent circuits, dependent sources, operational amplifier
 circuits, transient, sinusoidal, steady-state, and frequency response of first-order circuits (solution
 of linear, first-order, constant coefficient, ordinary differential equations), and military and
-civilian applications. Lab. Final exam. Prereq: Math 142. Sem hrs: 3 fall or spring. 
+civilian applications. Lab. Final exam. Prereq: Math 142. Sem hrs: 3 fall or spring.
 
 Original Author: Lt Col James Phillips, PhD
 
@@ -15,19 +15,25 @@ Original Author: Lt Col James Phillips, PhD
 
 Install `latex`:
 
-    brew cask install mactex
+```
+brew cask install basictex
+```
 
-Make sure `cmake` can find `latex`
+Put `handout.cls` and `DFEC-logo.png` in:
 
-	export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-darwin
+`/Users/<user name>/Library/texmf/tex/latex/local/`
 
-If you update `mactex` make sure to change the link if the year changes.
+install `lastpage.stl`:
 
-To help stay up todate with template changes, create these links in `~/Library/texmf/tex/latex/common`:
+```
+sudo tlmgr install lastpage
+```
 
-	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/handout.cls handout.cls
-	ln -s ~/google_drive/github/ece231/LaTeX_Stuff/DFEC-logo.png
+Might want to do:
 
+```
+sudo tlmgr update --all
+```
 
 ## Setup Windows
 
@@ -40,9 +46,10 @@ is a Windows installation package:
 I used the portable version x64 (near bottom of page) and put it in my Documents
 folder. Then added it to the path:
 
-		export IMAGEMAGICK_CONVERT=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64
-		export PATH=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64:$PATH
-
+```
+export IMAGEMAGICK_CONVERT=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64
+export PATH=/c/Users/Kevin.Walchko/Documents/ImageMagick-7.0.2-5-portable-Q16-x64:$PATH
+```
 
 ## Build
 
@@ -73,6 +80,8 @@ it.
 
 To remove spaces from file names:
 
-    for f in **/*; do mv -n "$f" `echo "$f" | sed -e 's/ /_/g'`; done
+```
+for f in **/*; do mv -n "$f" `echo "$f" | sed -e 's/ /_/g'`; done
+```
 
 Unfortunately this doesn't work recursively all the way down, just down one level.
